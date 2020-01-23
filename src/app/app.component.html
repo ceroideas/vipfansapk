@@ -1,0 +1,187 @@
+<ion-app>
+
+  <app-header *ngIf="showHeader"></app-header>
+
+  <ion-menu side="start" menuId="first" contentId="content1" *ngIf="showHeader">
+
+    <ion-content class="bg-1">
+
+      <ion-grid>
+
+        <ion-row class="ion-margin-top">
+          <ion-col size="3">
+            <!-- <img src="assets/new/manual-mode.png" alt="manual-mode" class="nav-icon"> -->
+            <div class="circle-menu" [ngStyle]="{'background-image':'url('+user.avatar+')'}">
+            </div>
+          </ion-col>
+          <ion-col size="9" class="ff2 fwr fz14 tc1 mt12">
+              <span style="position: relative; top: 0;width: 95px;display: inline-block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{user.name}}
+              </span>
+              <span *ngIf="perspective == 1" (click)="changePerspective()" style="position: relative; display: inline-block; top: 3px">
+                <img src="assets/new/arrow.svg" alt="" style="width: 18px;; opacity: .7"></span>
+              <span *ngIf="perspective == 2" (click)="changePerspective()" style="position: relative; display: inline-block; top: 3px; transform: rotate(180deg)">
+                <img src="assets/new/arrow.svg" alt="" style="width: 18px;; opacity: .7"></span>
+
+              <span (click)="rotateThis()" style="position: absolute; right: 20px; top: 6px;"><img id="rotate" src="assets/new/reload.svg" alt="" style="width: 24px; opacity: .7;"></span>
+          </ion-col>
+        </ion-row>
+        <hr class="separator-01 gradient-1">
+
+        <ion-row class="ion-margin-top" *ngIf="perspective == 2">
+          <ion-col size="3">
+            <!-- <img src="assets/new/manual-mode.png" alt="manual-mode" class="nav-icon"> -->
+            <div class="circle-menu" [ngStyle]="{'background-image':'url('+user.avatar+')'}">
+            </div>
+          </ion-col>
+          <ion-col size="9" class="ff2 fwr fz17 tc1 mt12">
+              <span style="position: relative; top: 4px;width: 175px;display: block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{user.name}}</span>
+          </ion-col>
+        </ion-row>
+        <hr class="separator-01 gradient-1" *ngIf="perspective == 2">
+
+        <span (click)="closeMenu()" *ngIf="perspective == 2" style="position: absolute; bottom: 10px; margin: auto; left: 0; right: 0; font-size: 14px; font-weight: 100; color: #fff; display: block; text-align: center">
+
+          <span (click)="goToGestion()">
+            <img src="assets/new/config.svg" alt="" style="width: 20px; height: 20px;position: relative;top: 5px;margin-right: 6px;">
+          <!-- <ion-icon style="font-size: 28px; position: relative; top: 8px;" name="cog"></ion-icon> -->
+          <span style="font-weight: 700;">{{"MENU.gestion" | translate}}</span>
+          </span>
+
+          <div style="padding: 20px; width: 100%; bottom: 20px;" *ngIf="perspective == 2">
+            <span style="width: 100%; color: #fff; font-weight: 700; font-size: 10px; display: block; text-align: center;">
+              <!-- {{"MENU.wich_lang" | translate}} -->
+
+
+              <img src="assets/new/spain.svg" alt="" style="width: 40px; padding: 5px;" (click)="setlang('es')">
+              <img src="assets/new/england.svg" alt="" style="width: 40px; padding: 5px;" (click)="setlang('en')">
+            </span>
+          </div>
+
+        </span>
+
+        <div *ngIf="perspective == 1">
+          <ion-row class="ion-margin-top">
+            <ion-col size="12" class="ff2 fwr fz14 tc1 mt12" style="color: #aaa; font-weight: 700">
+              MENU
+            </ion-col>
+          </ion-row>
+
+          <ion-row [routerLink]="['/shop/shop']" routerLinkActive="active"
+                                                                        (click)="closeMenu()">
+            <ion-col size="2">
+              <img src="assets/new/bag.svg" alt="buy-packages" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.shop" | translate}}
+            </ion-col>
+          </ion-row>
+          <ion-row [routerLink]="['/magnetism/transfer_magnetism']" routerLinkActive="active"
+                                                                    (click)="closeMenu()">
+            <ion-col size="2">
+              <img src="assets/new/magnet.svg" alt="magnetism" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.transfer" | translate}}
+            </ion-col>
+          </ion-row>
+          <ion-row (click)="closeMenu()" (click)="faqs()">
+            <ion-col size="2">
+              <img src="assets/new/questions.svg" alt="" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.faqs" | translate}}
+            </ion-col>
+          </ion-row>
+          <ion-row [routerLink]="['/share/share']" routerLinkActive="active" (click)="closeMenu()">
+            <ion-col size="2">
+              <img src="assets/new/persons.svg" alt="config" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.invite" | translate}}
+            </ion-col>
+          </ion-row>
+          <!-- <ion-row (click)="closeMenu()">
+            <ion-col size="2">
+              <img src="assets/new/exit.png" alt="exit" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" (click)="logout()" style="color: #fff; font-weight: 700;">
+              Salir
+            </ion-col>
+          </ion-row> -->
+
+          <button type="submit" class="ion-margin-top gradient-1 button-2 tc1"
+                                [routerLink]="['/magnetism/magnetism']" routerLinkActive="active"
+                                (click)="closeMenu()">
+            {{"MENU.magnetism" | translate}}
+          </button>
+
+          <button type="submit" class="ion-margin-top button-2 tc2" style="border: 2px solid #ffda76; background-color: transparent;"
+                                [routerLink]="['/magnetism/become_premium']" routerLinkActive="active"
+                                (click)="closeMenu()">
+            <span style="font-size: 24px; color: #fff; position: relative; top: -3px; margin-right: 6px;">
+            </span> <img src="assets/icon/haztevip.png" alt="" style="height: 26px; position: relative; top: 1px;">
+          </button>
+
+
+          <!-- <button type="submit" class="ion-margin-top bg-black button-2 tc1" (click)="closeMenu()">
+            ACTIVA MODO INVISIBLE
+          </button> -->
+
+          <hr class="ion-margin-top separator-01 gradient-1">
+          
+          <ion-row (click)="closeMenu()" (click)="telegram()">
+            <ion-col size="2">
+              <img src="assets/new/send.svg" alt="contacts" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.telegram" | translate}}
+            </ion-col>
+          </ion-row>
+
+          <ion-row (click)="closeMenu()" (click)="contact()">
+            <ion-col size="2">
+              <img src="assets/new/mailbox.svg" alt="contacts" class="nav-icon">
+            </ion-col>
+            <ion-col size="10" class="ff2 fwr fz14 tc1 mt12" style="color: #fff; font-weight: 700;">
+              {{"MENU.contact" | translate}}
+            </ion-col>
+          </ion-row>
+
+        </div>
+      </ion-grid>
+
+    </ion-content>
+
+    <ion-footer style="background-color: #161516" *ngIf="perspective == 1">
+      <div style="padding: 20px; width: 100%; bottom: 20px;">
+        
+        <div style="text-align: center; float: left; width: 25%;">
+          <img src="assets/imgs/instagram.svg" 
+          onclick="window.open('https://www.instagram.com/vipfansapk/?igshid=1fic2xkmv5fbf','_blank')"
+          style="height: 20px; border: 1px solid #7e22b6; border-radius: 6px; padding: 3px;">
+        </div>
+        <div style="text-align: center; float: left; width: 25%;">
+          <img src="assets/imgs/facebook.svg" 
+          onclick="window.open('https://www.facebook.com/VipFans-107004600686322/','_blank')"
+          style="height: 20px; border: 1px solid #385c8e; border-radius: 6px; padding: 3px;">
+        </div>
+        <div style="text-align: center; float: left; width: 25%;">
+          <img src="assets/imgs/twitter.svg" 
+          onclick="window.open('https://twitter.com/vipfansapk?s=09','_blank')"
+          style="height: 20px; border: 1px solid #03a9f4; border-radius: 6px; padding: 3px;">
+        </div>
+        <div style="text-align: center; float: left; width: 25%;">
+          <img src="assets/imgs/youtube.svg" 
+          style="height: 20px; border: 1px solid #ff0000; border-radius: 6px; padding: 3px;">
+        </div>
+
+      </div>
+    </ion-footer>
+
+  </ion-menu>
+
+  <ion-router-outlet id="content1" main></ion-router-outlet>
+
+  <app-footer *ngIf="showFooter"></app-footer>
+
+</ion-app>

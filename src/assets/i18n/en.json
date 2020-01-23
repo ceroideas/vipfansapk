@@ -1,0 +1,211 @@
+{
+	"LOGIN": {
+		"login":"Use to Instagram account to login",
+		"access":"ENTER"
+	},
+	"FORM": {
+		"form1":"We need to ask you some questions to offer a better quality of service!!",
+		"form1-1":"If you want to receive promotions you must write your email!",
+		"form2":"AGE",
+		"form3":"GENDER",
+		"form4":"PROVINCE",
+		"form5":"THEME",
+		"form6":"I WANT TO RECEIVE PROMOTIONS TO GET FREE SPANISH VIPFANS",
+		"form7":"Write your e-mail",
+		"form8":"Fill in the data",
+		"form9":"Picture, profile, biography",
+		"form10":"Minimum 1000 followers",
+		"form11":"Minimum 20 posts",
+		"form12":"Last post 1 month",
+		"form13":"More that 30% of followers                 ",
+		"form14":"Checking your account.  Will take a minute!!",
+		"form15":"We  see you have an avatar, you look great!!!",
+		"form16":"You have many followers, cool!!",
+		"form17":"Your last post is pretty recent. It is quite important your account is active!!",
+		"form18":"Good balance between followers and followed,  balance is everything in life!!",
+		"form19":"You have many followers, you rock it!!",
+		"form20":"Generating ID username",
+		"form21":"ID username",
+		"form22":"IMPORTANT",
+		"form23":"Log in can be denied if you stop following profiles followed in this app.",
+		"form24":"Check that you have Instagram installed for the app to work correctly.",
+		"form25":"HAVE AN INVITATION CODE?",
+		"form26":"PUT IT HERE",
+		"form27":"I ACCEPT TERMS OF USE",
+		"form28":"FINISH",
+		"form29":"You must accept the conditions!",
+		"select":"Select"
+	},
+	"TUTORIAL":
+	{
+		"tut1":"Interact with real Spanish profiles to get \"likes\".",
+		"tut2":"Get Spanish VipFans immediately and free.",
+		"tut3":"Do daily tasks to get rewards.",
+		"tut4":"Increase your videos reproductions in a funny way. ",
+		"tut5":"Get personal comments of Spanish users in your posts.",
+		"tut6":"Revise, pause or cancel all your campaigns  up to the minute.",
+		"tut7":"Create your personal campaigns."
+	},
+	"MENU": {
+		"shop":"Shop",
+		"transfer":"Transfer Magnetism",
+		"faqs":"FAQs",
+		"invite":"Invite friends",
+		"exit":"Exit",
+		"magnetism":"MAGNETISM",
+		"telegram":"Telegram",
+		"contact":"Contact",
+		"wich_lang": "In what language do you want us to speak to you?",
+		"gestion":"Account management"
+	},
+	"LIKE":
+	{
+		"give":"Click on like.",
+		"like":"Like",
+		"credit":"CREDIT LIKE",
+		"mcredit":"CREDIT MAGNETISM",
+		"howmany":"How many likes you want to send. ",
+		"paste":"Stick the post link here.",
+		"send":"SEND",
+		"sent":"Order sent"
+	},
+	"VIPFANS":{
+		"vipfans":"VipFans",
+		"follow":"Follow",
+		"credit":"CREDIT VIPFANS",
+		"mcredit":"CREDIT MAGNETISM",
+		"howmany":"How many VipFans do you want to send?",
+		"text1":"You can send VipFans to a different account",
+		"paste":"Stick link of a different instagram account",
+		"send":"SEND"
+	},
+	"VIDEOS": {
+		"videos":"Reproductions",
+		"play":"Play",
+		"credit":"CReDIT REPRODUCTIONS",
+		"mcredit":"CREDIT MAGNETISM",
+		"howmany":"How many reproductions do you want to send?",
+		"paste":"Stick here video link.",
+		"min":"Minimum reproduction time 5 seconds",
+		"send":"SEND"
+	},
+	"COMMENTS":{
+		"comments":"Comments",
+		"comment":"Comment",
+		"docomment":"Comment",
+		"credit":"CREDIT COMMENTS",
+		"mcredit":"CREDIT MAGNETISM",
+		"howmany":"How many comments do you want to send?",
+		"write":"Write comment",
+		"template":"SEE TEMPLATES",
+		"paste":"Stick here the post link",
+		"write": "Write and add the sentences",
+		"send":"VIEW TEMPLATES AND SEND",
+		"see":"SEE COMMENTS SENT",
+		"send1":"SAVE AND SEND"
+	},
+	"CAMPAIGNS":
+	{
+		"campaigns":"Campaigns",
+		"info":"Info campaigns",
+		"like":"Likes",
+		"vipfans":"Vipfans",
+		"comments":"Comments",
+		"reprod":"Reproductions",
+		"finish":"Finished campaigns",
+		"finished":"Finished on:",
+		"campaign": "Campaign",
+		"actived": " activated",
+		"paused": " paused",
+		"earned": "achieved",
+		"time": "Remaining <br /> time",
+		"pause": "Pause",
+		"stop": "Cancel",
+		"close": "Close",
+
+		"url_Likes":"https://www.instagram.com/p/B5-P2HHozAy/",
+		"url_Vipfans":"https://www.instagram.com/vipfansapk/",
+		"url_Comments":"https://www.instagram.com/p/B5gY47MIMZZ/",
+		"url_Reproductions":"https://www.instagram.com/p/B5Z1RnkI4Ox/",
+
+		"url_1":"https://www.instagram.com/p/B5-P2HHozAy/",
+		"url_2":"https://www.instagram.com/vipfansapk/",
+		"url_3":"https://www.instagram.com/p/B5gY47MIMZZ/",
+		"url_4":"https://www.instagram.com/p/B5Z1RnkI4Ox/"
+	},
+	"SHOP":
+	{
+		"selectcampaign": "Select the type of campaign",
+		"lk": "Like",
+		"vf": "VipFans",
+		"cm": "Comments",
+		"vd": "Reproductions",
+		"LK": "LIKE",
+		"VF": "VIPFANS",
+		"CM": "COMMENTS",
+		"VD": "REPRODUCTIONS",
+		"pay": "Pay with Stripe",
+
+		"added": "They have been added",
+		"toyou": "to your account"
+	},
+	"MAGNETISM":
+	{
+		"magnetism": "Magnetism",
+		"credits":"Magnetism Credits",
+		"complete": "Complete the required tasks",
+		"tasks": "Available tasks",
+		"notasks": "No tasks available",
+		"notasks2":"You must finish the tasks started",
+		"id": "User ID:",
+
+		"givelikes": "You must give 40 likes",
+		"givevipfans": "You must give 10 VipFans",
+		"givecomments": "You must give 50 Comments",
+		"givevideos": "You must give 20 Reproductions",
+
+		"changed": "Redeemed Magnetism",
+		"text1": "We have added",
+		"text2": "from magnetism to your counter.",
+		"change": "EXCHANGE MAGNETISM",
+
+		"vip1": "Become a free VIP with no transfer fee \"Magnetic\".",
+		"vip2": "Possibility to use up to 3 accounts at once.",
+		"vip3": "Exlusiovas rewards in tasks.",
+		"vip4": "Speed ​​X2 to complete your campaigns.",
+		"vip5": "Enjoy exclusive discounts on all products.",
+		"payment": "Successful payment",
+
+		"selectcampaign": "Select the type of campaign",
+
+		"selectservice": "Select the Service you want to redeem",
+		"lk": "I like it",
+		"vf": "VipFans",
+		"cm": "Comments",
+		"vd": "Reprod ...",
+
+		"mustselect": "You must select the service you wish to redeem"
+	},
+	"SHARE":
+	{
+		"share1": "INVITATION CODE",
+		"share2": "Share your invitation code with 10 friends who remain registered in the apk for a minimum of 30 days, and you will get 1,000 VipFans TOTALLY FREE.",
+		"share3": "Also ...",
+		"share4": "This way your friends can also enjoy VIP benefits for free for 30 days thanks to you.",
+		"share": "Share",
+		"message": "Download Vipfans and paste this code to enjoy 30 days Vip"
+	},
+	"SLIDES":
+	{
+		"next": "Next",
+		"paste": "Paste your code",
+		"invitation1": "Do you have an invitation code?",
+		"invitation2": "If you have an invitation code you can enjoy all the VIP advantages",
+		"invitation3": "Now you can win too!",
+		"invitation4": "Send your invitation code to 10 friends who remain registered in the apk for a minimum of 30 days, and you will also get 1000 VipFans TOTALLY FREE",
+		"invitation5": "Also ...",
+		"invitation6": "This way your friends can also enjoy the VIP advantages for free for 30 days, thanks to you.",
+		"accept": "Accept",
+		"cancel": "Cancel"
+	}
+}

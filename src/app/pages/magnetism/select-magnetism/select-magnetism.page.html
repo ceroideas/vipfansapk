@@ -1,0 +1,64 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="pt80 pb50">
+
+    <div class="ion-margin home-border mt50" style="background-color: #333;">
+
+      <ion-row class="ion-padding-vertical">
+
+        <ion-col size="12" class="ion-text-center">
+          <span class="ff1 fwl fz12 tc1">{{"MAGNETISM.selectservice" | translate}}</span>
+        </ion-col>
+
+        <ion-col size="3" (click)="likeIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{likeIcon}}" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span class="ff2 fwl fz8 tc1">{{"MAGNETISM.lk" | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="followersIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{followersIcon}}" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span class="ff2 fwl fz8 tc1">{{"MAGNETISM.vf" | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="commentsIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{commentsIcon}}" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span class="ff2 fwl fz8 tc1">{{"MAGNETISM.cm" | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="videosIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{videosIcon}}" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span class="ff2 fwl fz8 tc1">{{"MAGNETISM.vd" | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+        <button type="submit" class="ion-margin-top bg-blue2 button-2 tc1" (click)="closeModal()">
+          OK
+        </button>
+
+      </ion-row>
+
+    </div>
+
+  </ion-grid>
+
+</ion-content>

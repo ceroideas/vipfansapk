@@ -1,0 +1,115 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="top-bg01 pt60 pb50">
+
+    <img src="{{avatar}}" alt="avatar" class="home-avatar">
+
+    <div class="ion-margin home-border">
+  
+        <ion-row>
+  
+          <ion-col size="12" class="home-separator mt50">
+            <p class="ion-text-center ff1 fwr fz24 tc1">{{name}}</p>
+          </ion-col>
+  
+          <ion-col size="6" class="ion-text-center">
+            <span class="ff2 fwl fz11 tc1">{{"COMMENTS.credit" | translate}}</span>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center" [routerLink]="['/magnetism/magnetism']" routerLinkActive="active">
+            <span class="ff2 fwl fz11 tc1">{{"COMMENTS.mcredit" | translate}}</span>
+          </ion-col>
+  
+          <ion-col size="6" class="ion-text-center ion-padding-bottom">
+            <span class="ff1 fwl fz18 tc4">{{text2}}</span>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center ion-padding-bottom">
+            <span class="ff1 fwl fz18 tc1">{{text3}}</span>
+          </ion-col>
+  
+        </ion-row>
+  
+      </div>
+
+    <ion-row class="ion-margin-horizontal">
+      <ion-col size="10">
+        <span class="ion-text-center ff1 fwr fz12 tc1">
+          {{"COMMENTS.howmany" | translate}}
+        </span>
+      </ion-col>
+      <ion-col size="2" class="ion-margin-bottom form-w tc4 border-yellow">
+        <ion-input min="0" max="999" onkeyup="this.value > 999 ? this.value = 999 : ''" no-padding style="padding: 3px 10px !important" type="number" class="fz16"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="form01" class="ion-margin-top" (ngSubmit)="onSubmit()" style="margin-bottom: 50px;">
+
+      <!-- <ion-row class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="8" class="form-b border-yellow tc1">
+          <ion-textarea no-margin [placeholder]="'COMMENTS.write' | translate" class="fz12" formControlName="comment"></ion-textarea>
+        </ion-col>
+        <ion-col size="2">
+          <img src="assets/icon/add-button.png" alt="add-button" style="width: 30px;top: 10px;position: relative;">
+        </ion-col>
+        <ion-col size="2" class="ion-text-center ff1 fwl fz12 tc1 mt20">
+          2/12
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row no-padding no-margin class="ion-margin-horizontal ion-margin-bottom tc3" style="height: 40px">
+        <ion-col no-padding no-margin size="2">
+          <img no-padding no-margin src="assets/copy.png" alt="avatar" style="width: 40px; height: 40px;">
+        </ion-col>
+        <ion-col no-padding no-margin size="10">
+          <ion-input type="url" class="fz12 form-w border-yellow" formControlName="url" [placeholder]="'COMMENTS.paste' | translate">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row class="ion-margin">
+        <ion-col size="6">
+          <button type="submit" class="ion-margin-top ion-margin-left w120 button-4 bg-blue1 ff2 fz12 fwl tc1"
+            [routerLink]="['/comments/comments-template']" routerLinkActive="active">
+            {{"COMMENTS.template" | translate}}
+          </button>
+        </ion-col>
+      </ion-row> -->
+
+      <!-- <ion-row class="ion-margin-horizontal">
+        <ion-col size="12">
+          <p class="ion-margin-horizontal ion-text-center ff2 fwl fz12 tc1">
+            Pega aquí el enlace del comentario
+          </p>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row no-padding no-margin class="ion-margin-horizontal ion-margin-bottom tc3" style="height: 40px; margin-top: 40px;">
+        <ion-col no-padding no-margin size="2">
+          <span style="font-size: 16px; color: #fff; font-weight: 700; padding: 10px 0; display: block;">{{total}} / 10</span>
+        </ion-col>
+        <ion-col no-padding no-margin size="8">
+          <ion-input type="url" class="fz12 form-w border-yellow" formControlName="url" [(ngModel)]="sentence" [placeholder]="'COMMENTS.write' | translate">
+          </ion-input>
+        </ion-col>
+        <ion-col no-padding no-margin size="2">
+          <img (click)="addSentence()" no-padding no-margin src="assets/new/plus.svg" alt="avatar" class="nav-icon" style="width: 60px; height: 60px; position: relative; top: -16px;">
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <br>
+
+      <ion-row class="gradient-1 button-2 tc1" [routerLink]="['/comments/comments-template']" (click)="onSubmit()">
+        <!-- <ion-col size="4">
+        </ion-col> -->
+        <ion-col size="12" class="ion-text-left ion-margin-left ff1 fz16 mt5">
+          <div style="width: 100%; text-align: center;">
+            <span style="display: inline-block;position: relative;">{{"COMMENTS.send" | translate}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+  </ion-grid>
+
+</ion-content>

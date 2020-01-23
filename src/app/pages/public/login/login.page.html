@@ -1,0 +1,86 @@
+<ion-content class="bg-4" *ngIf="showVideo">
+  <video class="bg-video-1" #loginAnimation autoplay="true" poster="../../../assets/imgs/splash-screen.jpg" (click)="muteVideo()">
+    <source src="../../../assets/videos/splash-screen.mp4" type="video/mp4">
+  </video>
+</ion-content>
+
+<ion-content class="bg-1" *ngIf="!showVideo">
+
+  <ion-slides #dSlides *ngIf="showSlider">
+    <ion-slide><div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/1.jpg)">
+      <button size="small" style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="next(1)">{{"SLIDES.next" | translate}}</button>
+    </div></ion-slide>
+    <ion-slide><div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/2.jpg)">
+      <button size="small" style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="next(2)">{{"SLIDES.next" | translate}}</button>
+    </div></ion-slide>
+    <ion-slide><div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/3.jpg)">
+      <button size="small" style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="next(3)">{{"SLIDES.next" | translate}}</button>
+    </div></ion-slide>
+    <ion-slide><div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/4.jpg)">
+      <button style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="next(4)">
+        {{"SLIDES.next" | translate}}
+      </button>
+    </div></ion-slide>
+    <ion-slide><div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/5.jpg)">
+      <button style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="next(5)">
+        {{"SLIDES.next" | translate}}
+      </button>
+    </div></ion-slide>
+    <ion-slide>
+      <div style="background-size: cover; background-position: center; height: 100vh; width: 100vw; background-image: url(../../assets/7.jpg); padding: 60px; font-family: AdventProMedium">
+
+        <div style="background-color: transparent; position: relative; top: 8%; height: 150px;" (click)="openAlert()">
+          
+        </div>
+        <!-- <h1 style="color: #ffda76;font-size: 23px;">
+          {{"SLIDES.invitation1" | translate}}
+        </h1>
+
+        <div style="width: 200px; margin: 40px auto">
+          <img src="assets/copy.png" alt="" style="width: 40px; float: left">
+          <input type="text" id="pega-tu-codigo" placeholder="Pega tu código">
+
+          <div style="clear: both;"></div>
+        </div>
+
+        <p style="color: #fff; font-style: italic; line-height: 24px; font-size: 19px;">{{"SLIDES.invitation2" | translate}}</p>
+
+        <p style="color: #ffda76; font-style: italic; line-height: 24px; font-size: 19px;">{{"SLIDES.invitation3" | translate}}</p>
+
+        <p style="color: #fff; font-style: italic; line-height: 24px; font-size: 19px;">{{"SLIDES.invitation4" | translate}}</p>
+
+        <p style="color: #fff; font-style: italic; line-height: 24px; font-size: 19px;">{{"SLIDES.invitation5" | translate}}</p>
+
+        <p style="color: #fff; font-style: italic; line-height: 24px; font-size: 19px;">{{"SLIDES.invitation6" | translate}}</p> -->
+        <button style="margin: auto !important;position: absolute;bottom: 20px;left: 0;right: 0;" class="ion-margin-top gradient-1 button-1 tc1" (click)="goToLogin()">
+          {{"SLIDES.accept" | translate}}
+        </button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid *ngIf="!showSlider">
+
+    <ion-row>
+      <ion-col size="12">
+        <img src="assets/imgs/logo-01.png" alt="logo" class="logo slideDown">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col size="12" class="ion-margin-vertical">
+        <p class="ion-text-center ff1 fwr fz13 tc1">{{"LOGIN.login" | translate}}</p>
+      </ion-col>
+
+      <ion-col size="12">
+        <button class="ion-margin-top gradient-1 button-1 tc1" (click)="goToStart()">
+          {{"LOGIN.access" | translate}}
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

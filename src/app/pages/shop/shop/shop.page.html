@@ -1,0 +1,189 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="pt60 pb50">
+
+    <div class="">
+
+      <ion-row class="ion-padding-vertical">
+
+        <ion-col size="12" class="ion-text-center">
+          <span class="ff1 fwl fz14 tc1">{{"SHOP.selectcampaign" | translate}}</span>
+        </ion-col>
+
+        <br><br>
+
+        <ion-col size="3" (click)="likeIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{likeIcon}}" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"SHOP.lk" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{counts.likes}}</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="followersIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{followersIcon}}" alt="followers" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"SHOP.vf" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{counts.vipfans}}</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="commentsIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{commentsIcon}}" alt="comments" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"SHOP.cm" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{counts.comments}}</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3" (click)="videosIconToggle()">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="../../../assets/icon/{{videosIcon}}" alt="videos" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"SHOP.vd" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{counts.videos}}</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+
+    <ion-row *ngIf="likesDiv">
+
+      <ion-col size="6" style="padding: 5px;" *ngFor="let t of totales; let i = index">
+        <ion-row>
+          
+          <ion-col (click)="addSelection(i,'likes',t.price)" class="ion-padding ion-margin-shop home-border border-c1 bg-dark-2" [attr.data-selected]="(likesDiv && selected == i) ? 'si' : 'no'">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz22 tc5 mt5" style="margin-left: -15px">
+                {{t.ammount}}
+                <img src="assets/icon/w-like.png" alt="contacts" class="nav-icon" style="position: absolute; top: -6px">
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz12 tc1">{{"SHOP.LK" | translate}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">{{t.price}} €</ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+
+
+    </ion-row>
+
+    <ion-row *ngIf="followersDiv">
+
+      <ion-col size="6" style="padding: 5px;" *ngFor="let t of totales; let i = index">
+        <ion-row>
+          
+          <ion-col (click)="addSelection(i,'followers',t.price)" class="ion-padding ion-margin-shop home-border border-c1 bg-dark-2" [attr.data-selected]="(followersDiv && selected == i) ? 'si' : 'no'">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz22 tc5 mt5" style="margin-left: -15px">
+                {{t.ammount}}
+                <img src="assets/icon/w-frends.png" alt="contacts" class="nav-icon" style="position: absolute; top: -6px">
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz12 tc1">{{"SHOP.VF" | translate}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">{{t.price}} €</ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngIf="commentsDiv">
+
+      <ion-col size="6" style="padding: 5px;" *ngFor="let t of totales; let i = index">
+        <ion-row>
+          
+          <ion-col (click)="addSelection(i,'comments',t.price)" class="ion-padding ion-margin-shop home-border border-c1 bg-dark-2" [attr.data-selected]="(commentsDiv && selected == i) ? 'si' : 'no'">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz22 tc5 mt5" style="margin-left: -15px">
+                {{t.ammount}}
+                <img src="assets/icon/w-followers.png" alt="contacts" class="nav-icon" style="position: absolute; top: -6px">
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz12 tc1">{{"SHOP.CM" | translate}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">{{t.price}} €</ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngIf="videosDiv">
+
+      <ion-col size="6" style="padding: 5px;" *ngFor="let t of totales; let i = index">
+        <ion-row>
+          
+          <ion-col (click)="addSelection(i,'videos',t.price)" class="ion-padding ion-margin-shop home-border border-c1 bg-dark-2" [attr.data-selected]="(videosDiv && selected == i) ? 'si' : 'no'">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz22 tc5 mt5" style="margin-left: -15px">
+                {{t.ammount}}
+                <img src="assets/icon/w-videos.png" alt="contacts" class="nav-icon" style="position: absolute; top: -6px">
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz12 tc1">{{"SHOP.VD" | translate}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">{{t.price}} €</ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-card class="welcome-card" style="box-shadow: none !important;">
+      <ion-card-content>
+        <form action="/" method="post" id="payment-form">
+          <div class="form-row">
+            <div id="card-element"> <!-- a Stripe Element will be inserted here. --> </div>
+            <!-- Used to display Element errors -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <button type="submit" class="ion-padding ion-text-center br15 gradient-1 fz12 tc1" style="width: 100%;" expand="full">{{"SHOP.pay" | translate}}</button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <button type="submit" class="ion-margin-top gradient-1 button-2 tc1" *ngIf="showButton">
+      ENVIAR
+    </button> -->
+
+    <br>
+    <br>
+    <br>
+
+  </ion-grid>
+
+</ion-content>

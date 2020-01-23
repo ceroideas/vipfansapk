@@ -1,0 +1,68 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="pt50 pb50">
+
+    <ion-row>
+      <ion-col size="12">
+        <p class="ion-text-center ff2 fwr fz12 tc1">
+          ESTOS SON LOS COMENTARIOS QUE VAS A CARGAR
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="form01" class="ion-margin-top" (ngSubmit)="onSubmit()">
+
+      <ion-row class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="8" class="ff2 fwl fz12 tc1 mt5">
+          Comentario 01
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="create"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="trash"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="8" class="ff2 fwl fz12 tc1 mt5">
+          Comentario 01
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="create"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="trash"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="8" class="ff2 fwl fz12 tc1 mt5">
+          Comentario 01
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="create"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-icon name="trash"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-margin">
+        <ion-col size="6">
+          <button type="submit" class="ion-margin-top ion-margin-left w120 button-4 bg-green1 ff2 fz12 fwl tc1"
+            [routerLink]="['/comments/send-comments']" routerLinkActive="active">
+            OK, ENVIAR
+          </button>
+        </ion-col>
+        <ion-col size="6">
+          <button type="submit" class="ion-margin-top ion-margin-left w120 button-4 bg-red1 ff2 fz12 fwl tc1"
+            [routerLink]="['/comments/comments-template']" routerLinkActive="active">
+            CANCELAR
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+  </ion-grid>
+
+</ion-content>

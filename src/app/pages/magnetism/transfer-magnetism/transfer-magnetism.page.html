@@ -1,0 +1,104 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="mt50 pb50">
+
+    <ion-row>
+        <ion-col size="12">
+            <p class="ion-text-center ff1 fwr fz24 tc1" style="margin-top: 16px; margin-bottom: 16px;">ID Usuario: {{userId}}</p>
+            <p class="ion-text-center ff1 fwr fz14 tc1">Crédito Magnetismo</p>
+          </ion-col>
+      </ion-row>
+
+    <ion-row>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz16 tc3">55</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz16 tc3">34</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz16 tc3">72</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz16 tc3">61</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz9 tc3">Likes</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz9 tc3">VipFans</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz9 tc3">Comentarios</ion-col>
+      <ion-col size="3" class="ion-text-center ff1 fwr fz9 tc3">Reprod...</ion-col>
+    </ion-row>
+
+    <hr class="separator-01 gradient-2">
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center ff2 fwr fz12 tc3">
+        <span>Comisión </span>
+        <span class="tc1">{{percentage}}%</span>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="form01" class="ion-margin-top" (ngSubmit)="onSubmit()">
+
+      <!-- <ion-row class="ion-margin-horizontal ion-margin-bottom form-w tc3">
+        <ion-col size="2">
+          <img src="assets/icon/c-window.png" alt="avatar" class="nav-icon">
+        </ion-col>
+        <ion-col size="10">
+          <ion-input type="url" placeholder="Pega aquí el Id de usuario" class="fz12" formControlName="url">
+          </ion-input>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row no-padding no-margin class="ion-margin-horizontal ion-margin-bottom form-w tc3" style="height: 40px">
+        <ion-col no-padding no-margin size="2">
+          <img no-padding no-margin src="assets/icon/c-window.png" alt="avatar" class="nav-icon">
+        </ion-col>
+        <ion-col no-padding no-margin size="10">
+          <ion-input type="url" class="fz12" formControlName="url" placeholder="Pega aquí el Id de usuario">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <button type="submit" class="ion-margin-top gradient-1 button-2 tc1">
+        ENVIAR
+      </button>
+
+      <button type="button" class="ion-margin-top bg-blue2 button-2 tc1" (click)="presentModal()" style="margin-top: 32px !important;">
+        {{"MAGNETISM.change" | translate}}
+      </button>
+
+    </form>
+
+    <hr class="ion-margin-vertical mt20 separator-01 bg-yellow">
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center ff1 fwr fz15 tc1">Últimos usuarios</ion-col>
+    </ion-row>
+
+    <ion-row style="margin-bottom: 50px;">
+
+      <ion-col size="4">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <img src="../../../assets/imgs/samples/avatar-sample1.jpg" alt="avatar" class="ion-margin-top avatar-2">
+          </ion-col>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz12 tc1">Usuario Ejemplo</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <img src="../../../assets/imgs/samples/avatar-sample1.jpg" alt="avatar" class="ion-margin-top avatar-2">
+          </ion-col>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz12 tc1">Usuario Ejemplo</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <img src="../../../assets/imgs/samples/avatar-sample1.jpg" alt="avatar" class="ion-margin-top avatar-2">
+          </ion-col>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz12 tc1">Usuario Ejemplo</ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

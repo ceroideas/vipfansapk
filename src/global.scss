@@ -1,0 +1,107 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Personalizad */
+@import "theme/personalized-styles.css";
+@import "theme/animations.css";
+
+app-footer {
+    height: 100vh !important;
+}
+
+.tutorial {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	z-index: 9999;
+}
+
+.p-tutorial {
+	color: #eee; font-size: 16px; position: relative;z-index: 9999;
+	line-height: 18px;
+	width: 220px;
+}
+
+#p-tutorial-1 {
+	padding: 20px 0 10px 15px;
+}
+#p-tutorial-2 {
+	padding: 20px 20px 0 5px;
+	// left: 25px;
+	text-align: center;
+}
+#p-tutorial-3 {
+	padding: 20px 5px 15px 5px;
+	margin: auto;
+	text-align: center;
+}
+#p-tutorial-4 {
+	padding: 20px 20px 0 5px;
+	float: right;
+	right: 17px;
+	text-align: right;
+}
+#p-tutorial-5 {
+	padding: 20px 15px 20px 0;
+	float: right;
+	text-align: right;
+	top: 22px;
+}
+
+#p-tutorial-6 {
+	padding: 45px 10px 0 15px;
+	position: absolute;
+}
+ 	
+#p-tutorial-7 {
+	padding: 55px 5px 0 15px;
+	// left: 25px;
+	text-align: left;
+	position: absolute;
+}
+
+ion-toolbar#footer-main {
+	--height: 60px;
+	--min-height: 60px;
+}
+
+/**/
+
+#pega-tu-codigo {
+    float:right;
+    background: transparent;
+    border: none;
+    width: 140px;
+    border-bottom: 4px solid rgba(255,255,255,.3) !important;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 10px;
+    color: #fff;
+}
+#pega-tu-codigo:placeholder {
+    color: rgba(255,255,255,.3);
+}

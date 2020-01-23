@@ -1,0 +1,259 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="pb50" style="padding-top: 30px">
+
+    <div class="" style="margin-bottom: 50px;">
+
+      <ion-row>
+        <ion-col size="12" class="mt20">
+          <p class="ion-text-center ff1 fwr fz16 tc1">
+            <img src="assets/icon/c-window.png" alt="" style="width: 18px;position: relative;top:3px;">
+          ID Usuario: {{userId}}</p>
+
+          <hr class="separator-01 gradient-1">
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="position: relative; margin-top: -10px; padding: 0 5px;">
+        <ion-col size="12">
+          <p class="ion-text-center ff1 fwr fz14 tc1" style="margin: 8px 0">
+          {{"MAGNETISM.credits" | translate}}</p>
+        </ion-col>
+        <ion-col size="3">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="assets/icon/w-like.png" alt="likes" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.lk" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">10</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="assets/icon/w-frends.png" alt="followers" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.vf" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">12</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="assets/icon/w-followers.png" alt="comments" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.cm" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">25</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="3">
+          <ion-row>
+            <ion-col size="12" class="ion-text-center mt5">
+              <img src="assets/icon/w-videos.png" alt="videos" class="nav-icon-footer">
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.vd" | translate}} <br>
+              <span class="fz13" style="margin-top: 8px; display: block;">30</span></span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+        <ion-col size="12">
+          <p class="ion-text-center ff1 fwr fz16 tc1">{{"MAGNETISM.complete" | translate}}</p>
+        </ion-col>
+
+        <ion-col size="12">
+          <div>
+            <div class="m-icon"><img src="assets/icon/w-like.png" alt="likes" style="width: 18px;"></div>
+            <div class="m-slider">
+              <div class="control-slider bgl" [ngStyle]="{'left':'calc('+lp+'% - 11px)'}"></div>
+              <div class="rounded-slider">
+                <div class="m-progress" id="bgl-1" [ngStyle]="{'width':lp+'%'}"></div>
+              </div>
+            </div>
+            <div class="m-counts bgl no-bg" style="font-size: 12px !important; text-align: right;">{{lt}}/{{targetlp}}</div>
+          </div>
+
+          <div style="clear: both;"></div>
+
+          <div>
+            <div class="m-icon"><img src="assets/icon/w-frends.png" alt="followers" style="width: 18px;"></div>
+            <div class="m-slider">
+              <div class="control-slider bgf" [ngStyle]="{'left':'calc('+fp+'% - 11px)'}"></div>
+              <div class="rounded-slider">
+                <div class="m-progress" id="bgf-1" [ngStyle]="{'width':fp+'%'}"></div>
+              </div>
+            </div>
+            <div class="m-counts bgf no-bg" style="font-size: 12px !important; text-align: right;">{{ft}}/{{targetfp}}</div>
+          </div>
+
+          <div style="clear: both;"></div>
+
+          <div>
+            <div class="m-icon"><img src="assets/icon/w-followers.png" alt="comments" style="width: 18px;"></div>
+            <div class="m-slider">
+              <div class="control-slider bgc" [ngStyle]="{'left':'calc('+cp+'% - 11px)'}"></div>
+              <div class="rounded-slider">
+                <div class="m-progress" id="bgc-1" [ngStyle]="{'width':cp+'%'}"></div>
+              </div>
+            </div>
+            <div class="m-counts bgc no-bg" style="font-size: 12px !important; text-align: right;">{{ct}}/{{targetcp}}</div>
+          </div>
+
+          <div style="clear: both;"></div>
+
+          <div>
+            <div class="m-icon"><img src="assets/icon/w-videos.png" alt="videos" style="width: 18px;"></div>
+            <div class="m-slider">
+              <div class="control-slider bgv" [ngStyle]="{'left':'calc('+vp+'% - 11px)'}"></div>
+              <div class="rounded-slider">
+                <div class="m-progress" id="bgv-1" [ngStyle]="{'width':vp+'%'}"></div>
+              </div>
+            </div>
+            <div class="m-counts bgv no-bg" style="font-size: 12px !important; text-align: right;">{{vt}}/{{targetvp}}</div>
+          </div>
+
+          <div style="clear: both;"></div>
+
+        </ion-col>
+
+        <ion-col size="12">
+          <p class="ion-text-center ff1 fwr fz16 tc1" *ngIf="elements > 0">{{"MAGNETISM.tasks" | translate}}</p>
+          <p class="ion-text-center ff1 fwr fz16 tc1" *ngIf="elements == 0">{{"MAGNETISM.notasks" | translate}} <br> <small>{{"MAGNETISM.notasks2" | translate}}</small></p>
+        </ion-col>
+
+        <ion-col size="12">
+          <div class="available-tasks" *ngIf="buttons.lp" (click)="doClick('lp')" id="button-0">
+            <div class="av-icon">
+              <img src="assets/icon/heart.png" alt="">
+            </div>
+            <div class="av-desc">
+              <h2>Me Gusta <small>Dar 40 Me Gusta</small></h2>
+            </div>
+            <div class="av-remn"><span>300 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+          <div style="clear: both;"></div>
+          </div>
+
+
+          <div class="available-tasks" *ngIf="buttons.fp" (click)="doClick('fp')" id="button-1">
+            <div class="av-icon">
+              <img src="assets/icon/followers-.png" alt="">
+            </div>
+            <div class="av-desc">
+              <h2>VipFans <small>Seguir a 10 VipFans</small></h2>
+            </div>
+            <div class="av-remn"><span>350 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+          <div style="clear: both;"></div>
+          </div>
+
+
+          <div class="available-tasks" *ngIf="buttons.cp" (click)="doClick('cp')" id="button-3">
+            <div class="av-icon">
+              <img src="assets/icon/conversation.png" alt="">
+            </div>
+            <div class="av-desc">
+              <h2>Comentarios <small>Hacer 50 Comentarios</small></h2>
+            </div>
+            <div class="av-remn"><span>500 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+          <div style="clear: both;"></div>
+          </div>
+
+          <div class="available-tasks" *ngIf="buttons.vp" (click)="doClick('vp')" id="button-2">
+            <div class="av-icon">
+              <img src="assets/icon/0.png" alt="">
+            </div>
+            <div class="av-desc">
+              <h2>Reproducciones <small>Reproducir 20 vídeos</small></h2>
+            </div>
+            <div class="av-remn"><span>400 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+          <div style="clear: both;"></div>
+          </div>
+
+        </ion-col>
+
+        <!-- <ion-col size="12">
+          <ion-row>
+            <ion-col size="3" class="ion-text-center mt5">
+              <img src="assets/icon/w-like.png" alt="likes" class="nav-icon-footer"> <br>
+              <span class="ff1 fwl fz14 tc1">10</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center mt5">
+              <img src="assets/icon/w-frends.png" alt="followers" class="nav-icon-footer"> <br>
+              <span class="ff1 fwl fz14 tc1">12</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center mt5">
+              <img src="assets/icon/w-followers.png" alt="comments" class="nav-icon-footer"> <br>
+              <span class="ff1 fwl fz14 tc1">25</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center mt5">
+              <img src="assets/icon/w-videos.png" alt="videos" class="nav-icon-footer"> <br>
+              <span class="ff1 fwl fz14 tc1">30</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3" class="ion-text-center">
+              <span class="ff2 fwl fz9 tc1">Me gusta</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center">
+              <span class="ff2 fwl fz9 tc1">Vipfans</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center">
+              <span class="ff2 fwl fz9 tc1">Comentarios</span>
+            </ion-col>
+            <ion-col size="3" class="ion-text-center">
+              <span class="ff2 fwl fz9 tc1">Reproducciones</span>
+            </ion-col>
+          </ion-row>
+        </ion-col> -->
+
+        <!-- <ion-col size="11">
+          <ion-row>
+            <ion-col size="6" class="ion-text-center mt5">
+              <span class="ff1 fwl fz14 tc1">2X</span>
+            </ion-col>
+            <ion-col size="6" class="ion-text-center">
+              <span class="ff2 fwl fz12 tc1">Velocidad</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-text-center mt5">
+            <button type="submit" class="gradient-1 button-3 tc1" [routerLink]="['/magnetism/become_premium']" routerLinkActive="active">
+              Premium
+            </button>
+          </ion-row>
+        </ion-col>
+
+        <ion-col size="12" class="home-separator">
+        </ion-col>
+
+        <ion-col size="12" class="mt50">
+          <video class="iman-2" #magnetismAnimation poster="../../../assets/imgs/gif1.png"
+            (click)="playMagnetismAnimation()">
+            <source src="../../../assets/videos/gif1.webm" type="video/webm">
+          </video>
+        </ion-col> -->
+
+      </ion-row>
+
+      <!-- <ion-row>
+        <ion-col size="11" type="submit" class="ion-margin ion-padding ion-text-center br15 gradient-1 fz12 tc1"
+          (click)="presentExchangeMagnetismModal()">
+          CANJEAR {{followers}} MAGNETISMO EN LIKES
+        </ion-col>
+
+        <ion-col size="11" type="submit" class="ion-margin-bottom ion-margin-horizontal ion-padding ion-text-center br15 bg-black fz12 tc1"
+          [routerLink]="['/magnetism/transfer_magnetism']" routerLinkActive="active">
+          TRANSFIERE MAGNETISMO
+        </ion-col>
+      </ion-row> -->
+
+    </div>
+
+  </ion-grid>
+
+</ion-content>

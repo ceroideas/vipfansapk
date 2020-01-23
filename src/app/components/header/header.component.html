@@ -1,0 +1,67 @@
+<div class="tutorial" *ngIf="tutorial" style="background: rgba(0,0,0,.8);">
+  
+  <div style="position: absolute;width: 100vw;">
+
+    <div *ngIf="tutorial && tutorial == 6">
+      <p class="p-tutorial" id="p-tutorial-6">{{"TUTORIAL.tut6" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998; bottom: -300px;">
+        <circle cx="90" cy="90" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="90" cy="90" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+
+    <div *ngIf="tutorial && tutorial == 7">
+      <p class="p-tutorial" id="p-tutorial-7">{{"TUTORIAL.tut7" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998; bottom: -300px;">
+        <circle cx="100" cy="90" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="90" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+    
+    <ion-toolbar style="--background: none; z-index: 9999;">
+      <ion-buttons slot="start" style="opacity: 0">
+        <img src="assets/icon/w-burger-button.png" alt="menu" class="nav-icon">
+      </ion-buttons>
+      <ion-buttons (click)="nextTutorial(7)" slot="start">
+        <img [ngStyle]="tutorial && tutorial == 6 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-search.png" alt="search" class="nav-icon">
+      </ion-buttons>
+      <ion-buttons (click)="completeTutorial()" slot="start">
+          <img [ngStyle]="tutorial && tutorial == 7 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-users-group.png" alt="avatar" class="nav-icon-footer">
+      </ion-buttons>
+    </ion-toolbar>
+
+  </div>
+
+</div>
+
+<ion-toolbar class="bg-dark-1">
+
+  <ion-buttons slot="start">
+    <img src="assets/icon/w-burger-button.png" alt="menu" class="nav-icon" (click)="openFirst()">
+  </ion-buttons>
+  <ion-buttons slot="start" [routerLink]="['/process/process']" routerLinkActive="active">
+    <img src="assets/icon/{{processIcon}}" alt="search" class="nav-icon">
+  </ion-buttons>
+  <ion-buttons slot="start">
+      <img src="assets/icon/{{automaticIcon}}" alt="avatar" class="nav-icon-footer"
+                                            (click)="goProcess()">
+    </ion-buttons>
+    <ion-title style="color: #eee; font-size: 12px; position: absolute; margin: auto; left: 0; right: 0; width: 100%; text-align: center; top: 20px;">{{title}}</ion-title>
+  <ion-buttons slot="end" class="ff1 fz15 tc1">
+    {{quantity}}
+  </ion-buttons>
+  <ion-buttons slot="end" (click)="openExange()" routerLinkActive="active">
+    <img src="assets/icon/{{headerIcon}}" alt="followers" class="nav-icon">
+  </ion-buttons>
+
+</ion-toolbar>

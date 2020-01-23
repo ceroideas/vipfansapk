@@ -1,0 +1,146 @@
+
+<ion-content class="bg-1">
+
+    <ion-grid class="top-bg01 pb50">
+
+        <ion-row>
+          <ion-col size="12">
+            <img src="{{avatar}}" alt="avatar" class="avatar slideDown">
+            <p class="ion-text-center ff1 fwr fz22 tc1 fadeIn" style="margin: 10px 0">{{name}}</p>
+            <p class="ion-text-center ff2 fwl fz12 tc1">{{text1}}</p>
+            <hr class="ion-margin-horizontal separator-01 gradient-1">
+          </ion-col>
+        </ion-row>
+
+        <form [formGroup]="form01" (ngSubmit)="onSubmit()">
+
+          <ion-row class="ion-margin">
+            <ion-col size="4" class="mt5">
+              <ion-label class="ff1 fwr fz12 tc1">{{"FORM.form2" | translate}}</ion-label>
+            </ion-col>
+            <ion-col size="8" class="form-w tc3">
+              <ion-select style="padding: 5px;" [placeholder]="'FORM.select' | translate" formControlName="age">
+                <ion-select-option *ngFor="let age of ageList" value="{{age.value}}">
+                  {{age.value}}
+                </ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin">
+            <ion-col size="4" class="mt5">
+              <ion-label class="ff1 fwr fz12 tc1">{{"FORM.form3" | translate}}</ion-label>
+            </ion-col>
+            <ion-col size="8" class="form-w tc3">
+              <ion-select style="padding: 5px;" [placeholder]="'FORM.select' | translate" formControlName="gender">
+                <ion-select-option *ngFor="let gender of genderList" value="{{gender.value}}">
+                  {{gender.name}}
+                </ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin">
+            <ion-col size="4" class="mt5">
+              <ion-label class="ff1 fwr fz12 tc1">{{"FORM.form4" | translate}}</ion-label>
+            </ion-col>
+            <ion-col size="8" class="form-w tc3">
+              <ion-select style="padding: 5px;" [placeholder]="'FORM.select' | translate" formControlName="province">
+                <ion-select-option value='alava'>Álava</ion-select-option>
+                <ion-select-option value='albacete'>Albacete</ion-select-option>
+                <ion-select-option value='alicante'>Alicante/Alacant</ion-select-option>
+                <ion-select-option value='almeria'>Almería</ion-select-option>
+                <ion-select-option value='asturias'>Asturias</ion-select-option>
+                <ion-select-option value='avila'>Ávila</ion-select-option>
+                <ion-select-option value='badajoz'>Badajoz</ion-select-option>
+                <ion-select-option value='barcelona'>Barcelona</ion-select-option>
+                <ion-select-option value='burgos'>Burgos</ion-select-option>
+                <ion-select-option value='caceres'>Cáceres</ion-select-option>
+                <ion-select-option value='cadiz'>Cádiz</ion-select-option>
+                <ion-select-option value='cantabria'>Cantabria</ion-select-option>
+                <ion-select-option value='castellon'>Castellón/Castelló</ion-select-option>
+                <ion-select-option value='ceuta'>Ceuta</ion-select-option>
+                <ion-select-option value='ciudadreal'>Ciudad Real</ion-select-option>
+                <ion-select-option value='cordoba'>Córdoba</ion-select-option>
+                <ion-select-option value='cuenca'>Cuenca</ion-select-option>
+                <ion-select-option value='girona'>Girona</ion-select-option>
+                <ion-select-option value='laspalmas'>Las Palmas</ion-select-option>
+                <ion-select-option value='granada'>Granada</ion-select-option>
+                <ion-select-option value='guadalajara'>Guadalajara</ion-select-option>
+                <ion-select-option value='guipuzcoa'>Guipúzcoa</ion-select-option>
+                <ion-select-option value='huelva'>Huelva</ion-select-option>
+                <ion-select-option value='huesca'>Huesca</ion-select-option>
+                <ion-select-option value='illesbalears'>Illes Balears</ion-select-option>
+                <ion-select-option value='jaen'>Jaén</ion-select-option>
+                <ion-select-option value='acoruña'>A Coruña</ion-select-option>
+                <ion-select-option value='larioja'>La Rioja</ion-select-option>
+                <ion-select-option value='leon'>León</ion-select-option>
+                <ion-select-option value='lleida'>Lleida</ion-select-option>
+                <ion-select-option value='lugo'>Lugo</ion-select-option>
+                <ion-select-option value='madrid'>Madrid</ion-select-option>
+                <ion-select-option value='malaga'>Málaga</ion-select-option>
+                <ion-select-option value='melilla'>Melilla</ion-select-option>
+                <ion-select-option value='murcia'>Murcia</ion-select-option>
+                <ion-select-option value='navarra'>Navarra</ion-select-option>
+                <ion-select-option value='ourense'>Ourense</ion-select-option>
+                <ion-select-option value='palencia'>Palencia</ion-select-option>
+                <ion-select-option value='pontevedra'>Pontevedra</ion-select-option>
+                <ion-select-option value='salamanca'>Salamanca</ion-select-option>
+                <ion-select-option value='segovia'>Segovia</ion-select-option>
+                <ion-select-option value='sevilla'>Sevilla</ion-select-option>
+                <ion-select-option value='soria'>Soria</ion-select-option>
+                <ion-select-option value='tarragona'>Tarragona</ion-select-option>
+                <ion-select-option value='santacruztenerife'>Santa Cruz de Tenerife</ion-select-option>
+                <ion-select-option value='teruel'>Teruel</ion-select-option>
+                <ion-select-option value='toledo'>Toledo</ion-select-option>
+                <ion-select-option value='valencia'>Valencia/Valéncia</ion-select-option>
+                <ion-select-option value='valladolid'>Valladolid</ion-select-option>
+                <ion-select-option value='vizcaya'>Vizcaya</ion-select-option>
+                <ion-select-option value='zamora'>Zamora</ion-select-option>
+                <ion-select-option value='zaragoza'>Zaragoza</ion-select-option>
+                <!-- <ion-select-option *ngFor="let province of provincesList" value="{{province.id}}">
+                  {{province.provincia}}
+                </ion-select-option> -->
+              </ion-select>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin">
+            <ion-col size="4" class="mt5">
+              <ion-label class="ff1 fwr fz12 tc1">{{"FORM.form5" | translate}}</ion-label>
+            </ion-col>
+            <ion-col size="8" class="form-w tc3">
+              <ion-select style="padding: 5px;" [placeholder]="'FORM.select' | translate" formControlName="thematic">
+                <ion-select-option *ngFor="let thematic of thematicsList" value="{{thematic.value}}">
+                  {{thematic.name}}
+                </ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin">
+            <ion-col size="10" class="ff3 fwr fz10 tc1 mt5 ion-text-left"
+                                                   (click)="promotionsToggle()">
+              {{"FORM.form6" | translate}}
+            </ion-col>
+            <ion-col size="2">
+              <ion-checkbox color="dark" [(ngModel)]="promociones" formControlName="promotions" class="mt5">
+              </ion-checkbox>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin">
+            <ion-col size="12" class="form-w tc3">
+              <ion-input type="email" [(ngModel)]="email" [placeholder]="'FORM.form7' | translate" formControlName="email"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <button type="submit" class="ion-margin-top gradient-1 button-2 tc1" (click)="onSubmit()">
+            {{"FORM.form8" | translate}}
+          </button>
+
+        </form>
+                
+      </ion-grid>
+    
+</ion-content>

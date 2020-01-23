@@ -1,0 +1,23 @@
+#pentagon {
+  position: absolute;
+  width: 108px;
+  box-sizing: content-box;
+  border-width: 100px 36px 0;
+  border-style: solid;
+  border-color: #212121 transparent;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 180px;
+}
+#pentagon:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -170px;
+  left: -35px;
+  border-width: 0 90px 70px;
+  border-style: solid;
+  border-color: transparent transparent #212121;
+}

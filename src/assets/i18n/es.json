@@ -1,0 +1,211 @@
+{
+	"LOGIN": {
+		"login":"Accede con tu cuenta de instagram",
+		"access":"ACCEDER"
+	},
+	"FORM": {
+		"form1":"Para poder ofrecerte una mejor calidad de nuestro servicio, necesitamos hacerte unas preguntas!!",
+		"form1-1":"Si quiere recibir promociones debe escribir su email!",
+		"form2":"EDAD",
+		"form3":"GÉNERO",
+		"form4":"PROVINCIA",
+		"form5":"TEMÁTICA",
+		"form6":"QUIERO RECIBIR PROMOCIONES PARA CONSEGUIR VIPFANS ESPAÑOLES GRÁTIS ",
+		"form7":"Escribe tu correo electrónico",
+		"form8":"COMPLETAR REGISTRO ",
+		"form9":"Foto, Perfil y Biografía",
+		"form10":"Mínimo 1.000 seguidores.",
+		"form11":"Mínimo 20 posts.",
+		"form12":"Última Publicación 1 mes.",
+		"form13":"30% más de seguidores.",
+		"form14":"Estamos analizando tu cuenta. Sólo nos llevará un momento!!",
+		"form15":"Estamos comprobando que tu cuenta es real, se te ve muy bien!!",
+		"form16":"Tienes bastantes seguidores, bien!!",
+		"form17":"Tu última publicación es bastante reciente. Es importante que tu cuenta este viva!!",
+		"form18":"El equilibrio entre seguidores y seguidos es el adecuado, en la vida todo es equilibrio!!",
+		"form19":"Tienes bastantes seguidores, bien!!",
+		"form20":"Generando ID de usuario",
+		"form21":"ID Usuario:",
+		"form22":"IMPORTANTE",
+		"form23":"Si dejas de seguir a los perfiles seguidos en la app tu acceso puede ser denegado.",
+		"form24":"Asegurate de tener instalado Instagram para el correcto funcionamiento de la app.",
+		"form25":"¿TIENES UN CÓDIGO DE INVITACIÓN?",
+		"form26":"PEGALO AQUÍ",
+		"form27":"ACEPTO LOS TÉRMINOS DE USO",
+		"form28":"FINALIZAR",
+		"form29":"Debe aceptar las condiciones!",
+		"select":"Select"
+	},
+	"TUTORIAL":
+	{
+		"tut1":"Interactua con perfiles reales de España para obtener \"Me gusta\".",
+		"tut2":"Consigue VipFans españoles al instante de forma gratuita.",
+		"tut3":"Realiza tareas diarias para obtener recompensas.",
+		"tut4":"Incrementa las reproducciones de tus videos de forma divertida.",
+		"tut5":"Obten comentarios personalizados de usuarios españoles para para tus publicaciones.",
+		"tut6":"Revisa, pausa o cancela todas tus campañas a tiempo real",
+		"tut7":"Crea tus propias campañas personalizadas."
+	},
+	"MENU": {
+		"shop":"Tienda",
+		"transfer":"Transferir Magnetismo",
+		"faqs":"Preguntas",
+		"invite":"Invitar a amigos",
+		"exit":"Salir",
+		"magnetism":"MAGNETISMO",
+		"telegram":"Telegram",
+		"contact":"Contacto",
+		"wich_lang":"¿En qué idioma quieres que te hablemos?",
+		"gestion":"Gestión de cuentas"
+	},
+	"LIKE":
+	{
+		"give":"Dar Me Gusta",
+		"like":"Me gusta",
+		"credit":"CRÉDITO ME GUSTA",
+		"mcredit":"CRÉDITO MAGNETISMO",
+		"howmany":"¿Cuántos Me gusta quieres enviar? ",
+		"paste":"Pega aquí el enlace del post",
+		"send":"ENVIAR",
+		"sent":"Orden enviada"
+	},
+	"VIPFANS":{
+		"vipfans":"VipFans",
+		"follow":"Seguir",
+		"credit":"CRÉDITO VIPFANS",
+		"mcredit":"CRÉDITO MAGNETISMO",
+		"howmany":"¿Cuántos VipFans quieres enviar?",
+		"text1":"Puedes enviar VipFans a otra cuenta",
+		"paste":"Pega link de otra cuenta de instagram",
+		"send":"ENVIAR"
+	},
+	"VIDEOS": {
+		"videos":"Reproducciones",
+		"play":"Reproducir",
+		"credit":"CRÉDITO REPRODUCCIONES",
+		"mcredit":"CRÉDITO MAGNETISMO",
+		"howmany":"¿Cuántas reproducciones quieres enviar?",
+		"paste":"Pega aquí el enlace del video",
+		"min":"Tiempo mínimo de reproducción 5 segundos",
+		"send":"ENVIAR"
+	},
+	"COMMENTS":{
+		"comments":"Comentarios",
+		"comment":"Comentario",
+		"docomment":"Comentar",
+		"credit":"CRÉDITO COMENTARIOS",
+		"mcredit":"CRÉDITO MAGNETISMO",
+		"howmany":"¿Cuántos comentarios quieres enviar?",
+		"write":"Escribir comentario",
+		"template":"VER PLANTILLAS",
+		"paste":"Pegar link de la publicación",
+		"write":"Escribe y ve sumando las frases",
+		"send":"VER PLANTILLAS Y ENVIAR",
+		"see":"VER COMENTARIOS ENVIADOS",
+		"send1":"GUARDAR Y ENVIAR"
+	},
+	"CAMPAIGNS":
+	{
+		"campaigns":"Campañas",
+		"info":"Info Campañas",
+		"like":"Me Gusta",
+		"vipfans":"Vipfans",
+		"comments":"Comentarios",
+		"reprod":"Reproducciones",
+		"finish":"Campañas finalizadas",
+		"finished":"Finalizado el:",
+		"campaign":"Campaña",
+		"actived":" activada",
+		"paused":" pausada",
+		"earned":"conseguidos",
+		"time":"Tiempo <br /> restante",
+		"pause":"Pausar",
+		"stop":"Cancelar",
+		"close":"Cerrar",
+
+		"url_Me Gusta":"https://www.instagram.com/p/B5-P2HHozAy/",
+		"url_Vipfans":"https://www.instagram.com/vipfansapk/",
+		"url_Comentarios":"https://www.instagram.com/p/B5gY47MIMZZ/",
+		"url_Reproducciones":"https://www.instagram.com/p/B5Z1RnkI4Ox/",
+
+		"url_1":"https://www.instagram.com/p/B5-P2HHozAy/",
+		"url_2":"https://www.instagram.com/vipfansapk/",
+		"url_3":"https://www.instagram.com/p/B5gY47MIMZZ/",
+		"url_4":"https://www.instagram.com/p/B5Z1RnkI4Ox/"
+	},
+	"SHOP":
+	{
+		"selectcampaign":"Selecciona el tipo de campaña",
+		"lk":"Me gusta",
+		"vf":"VipFans",
+		"cm":"Comentarios",
+		"vd":"Reproducciones",
+		"LK":"ME GUSTA",
+		"VF":"VIPFANS",
+		"CM":"COMENTARIOS",
+		"VD":"REPRODUCCIONES",
+		"pay":"Pagar con Stripe",
+
+		"added":"Se han agregado ",
+		"toyou":" a tu cuenta"
+	},
+	"MAGNETISM":
+	{
+		"magnetism":"Magnetismo",
+		"credits":"Créditos Magnetismo",
+		"complete":"Completa las tareas requeridas",
+		"tasks":"Tareas disponibles",
+		"notasks":"No hay tareas disponibles",
+		"notasks2":"Debes terminar las tareas iniciadas",
+		"id":"ID Usuario:",
+
+		"givelikes":"Debes dar 40 Me Gusta",
+		"givevipfans":"Debes dar 10 VipFans",
+		"givecomments":"Debes dar 50 Comentarios",
+		"givevideos":"Debes dar 20 Reproducciones",
+
+		"changed":"Magnetismo Canjeado",
+		"text1":"Hemos añadido",
+		"text2":"de magnetismo a tu contador.",
+		"change":"CANJEAR MAGNETISMO",
+
+		"vip1":"Hazte VIP gratis sin comisión de <br> transferencia \"Magnetic\".",
+		"vip2":"Posibilidad de usar hasta 3 cuentas a la vez.",
+		"vip3":"Recompensas exlusiovas en tareas.",
+		"vip4":"Velocidad X2 para completar tus campañas.",
+		"vip5":"Disfruta de descuentas exclusivos en todos los productos.",
+		"payment":"Pago satisfactorio",
+		
+		"selectcampaign":"Selecciona el tipo de campaña",
+
+		"selectservice":"Selecciona el Servicio que quieres canjear",
+		"lk":"Me Gusta",
+		"vf":"VipFans",
+		"cm":"Comentarios",
+		"vd":"Reprod...",
+
+		"mustselect":"Debe seleccionar el servicio que desea canjear"
+	},
+	"SHARE":
+	{
+		"share1":"CÓDIGO INVITACIÓN",
+		"share2":"Comparte tú código de invitación con 10 amig@s que permanezcan registrados en la apk un mínimo de 30 días, y conseguiras 1.000 VipFans TOTALMENTE GRATIS.",
+		"share3":"Además...",
+		"share4":"De esta forma tus amigos también podrán disfrutar de las ventajas VIP de forma gratuita durante 30 días gracias a tí.",
+		"share":"Compartir",
+		"message":"Descarga Vipfans y pega este código para disfrutar de 30 días Vip"
+	},
+	"SLIDES":
+	{
+		"next":"Siguiente",
+		"paste":"Pega tu código",
+		"invitation1":"¿Tienes un código de invitación?",
+		"invitation2":"Si tienes un código de invitación podrás disfrutar de todas las ventajas VIP",
+		"invitation3":"Ahora también puedes ganar tú!",
+		"invitation4":"Envía tu código de invitación a 10 amigos que permanezcan registrados en la apk un mínimo de 30 días, y Tú también conseguiras 1000 VipFans TOTALMENTE GRATIS",
+		"invitation5":"Además...",
+		"invitation6":"De esta forma tus amigos también podrán disfrutar igual que tu, de las ventajas VIP de forma gratuita durante 30 días gracias a tí.",
+		"accept":"Aceptar",
+		"cancel":"Cancelar"
+	}
+}

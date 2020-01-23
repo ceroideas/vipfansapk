@@ -1,0 +1,48 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="pt50 pb50">
+
+    <!-- <button type="submit" class="ion-margin-vertical bg-green1 button-2 ff2 fz12 tc1" (click)="onSubmit()">
+      VER COMENTARIOS ENVIADOS
+    </button> -->
+
+    <h3 style="color: #fff; text-align: center;font-size: 18px;margin-top: 40px; margin-bottom: 30px">Comentarios creados</h3>
+
+      
+      <ion-row class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-checkbox color="dark" [(ngModel)]="checkTodas" class="mt5" (click)="checkAll()">
+          </ion-checkbox>
+        </ion-col>
+        <ion-col size="6" class="ff2 fwl fz14 tc1 mt5">
+          Seleccionar todas
+        </ion-col>
+        <ion-col size="4" class="fz24 tc1" style="padding-left:30px;color: #fc9712">
+          {{total}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let c of comments; let i = index;" class="ion-margin-horizontal ion-margin-bottom">
+        <ion-col size="2" class="ion-text-center fz24 tc1">
+          <ion-checkbox [(ngModel)]="checkeds[i]" color="dark" class="mt5" (click)="checkTotal()">
+          </ion-checkbox>
+        </ion-col>
+        <ion-col size="7" class="ff2 fwl fz12 mt5" style="color: #767676">
+          <span *ngIf="!editable[i]">{{c}}</span>
+          <input *ngIf="editable[i]" type="text" [(ngModel)]="values[i]" [value]="c" style="border: 1px solid #767676; color: #ccc; background-color: #fff;padding: 3px;position: relative;top: -2px;background: transparent; width: 100%;">
+        </ion-col>
+        <!-- <ion-col size="2" class="ion-text-center fz24 tc1">
+        </ion-col> -->
+        <ion-col size="3" class="ion-text-center fz24 tc1">
+          <img src="assets/new/pencil.svg" alt="" style="width: 18px; height: 18px; margin-right: 15px;" (click)="edit(i)">
+          <img src="assets/new/trash.svg" alt="" style="width: 18px; height: 18px;" (click)="delete(i)">
+        </ion-col>
+      </ion-row>
+
+      <button type="submit" class="ion-margin-vertical gradient-1 button-2 ff2 fz12 tc1" (click)="onSubmit()">
+        GUARDAR Y ENVIAR
+      </button>
+
+  </ion-grid>
+
+</ion-content>

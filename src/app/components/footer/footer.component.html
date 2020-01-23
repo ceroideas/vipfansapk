@@ -1,0 +1,161 @@
+
+<div class="tutorial" *ngIf="tutorial">
+
+  <div style="position: absolute; bottom: 53px;width: 100vw;">
+  
+    <div *ngIf="tutorial && tutorial == 1">
+      <p class="p-tutorial" id="p-tutorial-1">{{"TUTORIAL.tut1" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998;">
+        <circle cx="90" cy="250" fill="none" r="150" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="90" cy="250" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+    
+    <div *ngIf="tutorial && tutorial == 2">
+      <p class="p-tutorial" id="p-tutorial-2">{{"TUTORIAL.tut2" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998;">
+        <circle cx="100" cy="250" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="250" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+    
+    <div *ngIf="tutorial && tutorial == 3">
+      <p class="p-tutorial" id="p-tutorial-3" style="position: relative; top: -3px;">{{"TUTORIAL.tut3" | translate}}</p>
+      <svg width="100%" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998;left:0; right: 0; margin: auto;">
+        <circle cx="50%" cy="250" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="50%" cy="250" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+    
+    <div *ngIf="tutorial && tutorial == 4">
+      <p class="p-tutorial" id="p-tutorial-4">{{"TUTORIAL.tut4" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998; right: 0">
+        <circle cx="260" cy="250" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="260" cy="250" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+    
+    <div *ngIf="tutorial && tutorial == 5">
+      <p class="p-tutorial" id="p-tutorial-5">{{"TUTORIAL.tut5" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998; right: 0">
+        <circle cx="280" cy="250" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="280" cy="250" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
+
+    <ion-toolbar style="--background: none; z-index: 9999; --min-heigth: 60px !important; --height: 60px; top: -10px;">
+
+      <ion-buttons (click)="nextTutorial(2)" slot="start" class="ml-10" style="position: relative; top: 11px;">
+        <img [ngStyle]="tutorial && tutorial == 1 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-like.png" alt="likes" class="nav-icon-footer">
+      </ion-buttons>
+      <ion-buttons (click)="nextTutorial(3)" slot="start" class="ml-10" style="position: relative; top: 11px;">
+        <img [ngStyle]="tutorial && tutorial == 2 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-frends.png" alt="friends" class="nav-icon-footer">
+      </ion-buttons>
+
+      <div class="div-icon" (click)="nextTutorial(4)" style="position: relative; top: -5px;">
+        <img [ngStyle]="tutorial && tutorial == 3 ? {'opacity':'1'} : {'opacity':'0'}" src="../../../assets/imgs/gif1.png" alt="top" class="footer-icon">
+      </div>
+
+      <ion-buttons (click)="nextTutorial(5)" slot="end" class="mr-10" style="position: relative; top: 11px;">
+        <img [ngStyle]="tutorial && tutorial == 4 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-videos.png" alt="videos" class="nav-icon-footer">
+      </ion-buttons>
+        
+      <ion-buttons (click)="nextTutorial(6)" slot="end" class="mr-10" style="position: relative; top: 11px;">
+        <img [ngStyle]="tutorial && tutorial == 5 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-followers.png" alt="followers" class="nav-icon-footer">
+      </ion-buttons>
+        
+    </ion-toolbar>
+
+    <!-- <div style="clear: both;"></div> -->
+    
+    <!-- <div style="width: 19%; float: left; text-align: center;">
+      <img src="assets/icon/c-like.png" alt="likes" class="nav-icon-footer" style="position: relative; z-index: 9999;">
+    </div>
+    <div style="width: 11%; float: left; text-align: center;">
+      <img src="assets/icon/c-frends.png" alt="friends" class="nav-icon-footer" style="position: relative; z-index: 9999;">
+    </div>
+    <div style="width: 40%; float: left; text-align: center;">
+      <img src="../../../assets/icon/iman-1.png" alt="top" style="width: 50px;height: 50px;top: -6px;position: relative; z-index: 9999">
+    </div>
+    <div style="width: 11%; float: left; text-align: center;">
+      <img src="assets/icon/c-videos.png" alt="videos" class="nav-icon-footer" style="position: relative; z-index: 9999;">
+    </div>
+    <div style="width: 19%; float: left; text-align: center;">
+      <img src="assets/icon/c-followers.png" alt="followers" class="nav-icon-footer" style="position: relative; z-index: 9999;">
+    </div> -->
+
+  </div>
+
+</div>
+
+<ion-footer style="position: absolute; bottom: 0">
+
+  <img src="../../../assets/imgs/footer-bg.svg" alt="top" class="top-img">
+  
+  <ion-toolbar style="--background: none; --min-heigth: 60px !important;" id="footer-main">
+
+      <div style="background: #fff; height: 42px; position: absolute; width: 100%; bottom: 0px; left: 0">
+      </div>
+      
+
+        <ion-buttons slot="start" class="ml-10" style="position: relative; top: 6px;">
+          <img src="assets/icon/{{likeIcon}}" alt="likes" class="nav-icon-footer"
+                                            [routerLink]="['/likes/likes-manual']" routerLinkActive="active"
+                                            (click)="likeIconToggle()">
+        </ion-buttons>
+        <ion-buttons slot="start" class="ml-10" style="position: relative; top: 6px;">
+          <img src="assets/icon/{{followersIcon}}" alt="friends" class="nav-icon-footer"
+                                              [routerLink]="['/followers/followers-manual']" routerLinkActive="active"
+                                              (click)="followersIconToggle()">
+        </ion-buttons>
+
+        <div class="div-icon" style="position: relative; z-index: 9999; top: -3px;">
+            <video style="width: 60px;height: 60px;" #magnetismAnimation poster="../../../assets/imgs/gif1.png"
+            (click)="playMagnetismAnimation()">
+            <source src="../../../assets/videos/gif1.webm" type="video/webm">
+          </video>
+          <img src="../../../assets/icon/iman-1.png" alt="top" class="footer-icon"
+                                                    [routerLink]="['/magnetism/magnetism']" routerLinkActive="active"
+                                                    (click)="magnetismIconToggle()">
+        </div>
+
+        <ion-buttons slot="end" class="mr-10" style="position: relative; top: 6px;">
+          <img src="assets/icon/{{videosIcon}}" alt="videos" class="nav-icon-footer"
+                                                [routerLink]="['/videos/videos-manual']" routerLinkActive="active"
+                                                (click)="videosIconToggle()">
+        </ion-buttons>
+          
+        <ion-buttons slot="end" class="mr-10" style="position: relative; top: 6px;">
+          <img src="assets/icon/{{commentsIcon}}" alt="followers" class="nav-icon-footer"
+                                                [routerLink]="['/comments/comments-manual']" routerLinkActive="active"
+                                                (click)="commentsIconToggle()">
+        </ion-buttons>
+      
+  </ion-toolbar>
+  
+</ion-footer>

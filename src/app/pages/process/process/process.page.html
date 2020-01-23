@@ -1,0 +1,263 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="top-bg01 pt60 pb50">
+
+    <img src="{{avatar}}" alt="avatar" class="home-avatar">
+
+    <div class="ion-margin home-border">
+
+      <ion-row>
+        <ion-col size="12" class="home-separator mt50">
+          <p class="ion-text-center ff1 fwr fz24 tc1">{{name}}</p>
+        </ion-col>
+
+        <ion-col size="12" class="ion-text-center">
+          <br>
+          <span class="ion-margin-horizontal ff2 fwl fz14 tc1">{{"CAMPAIGNS.info" | translate}}</span>
+          <br><br>
+        </ion-col>
+
+        <!-- <ion-col size="4" class="ion-text-center">
+          <span class="ion-margin-horizontal ff2 fwl fz11 tc1">SEGUIDORES</span>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <span class="ion-margin-horizontal ff2 fwl fz11 tc1">SEGUIDOS</span>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <span class="ion-margin-horizontal ff2 fwl fz11 tc1">POST</span>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center ion-padding-bottom">
+          <span class="ion-margin-horizontal  ff1 fwl fz18 tc1">{{text2}}</span>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center ion-padding-bottom">
+          <span class="ion-margin-horizontal ff1 fwl fz18 tc1">{{text3}}</span>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center ion-padding-bottom">
+          <span class="ion-margin-horizontal ff1 fwl fz18 tc1">{{text4}}</span>
+        </ion-col> -->
+      </ion-row>
+
+    </div>
+
+    <ion-row>
+
+      <ion-col class="ion-padding-side ion-margin home-border border-c1 bg-dark-2" (click)="showModal('like',1)" id="cuadro-1">
+        <img src="assets/icon/clock.svg" alt="clock" class="clock-icon">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">100</ion-col>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.like" | translate}}</ion-col>
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <div class="img-container">
+            <div class="bg-process" [ngStyle]="{'height':lp+'%'}"></div>
+            <img src="assets/st/like.png" class="process-icon">
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">65/100</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="ion-padding-side ion-margin home-border border-c1 bg-dark-2" (click)="showModal('vipfans',2)" id="cuadro-2">
+        <img src="assets/icon/clock.svg" alt="clock" class="clock-icon">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">100</ion-col>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.vipfans" | translate}}</ion-col>
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <div class="img-container">
+            <div class="bg-process" [ngStyle]="{'height':fp+'%'}"></div>
+            <img src="assets/st/vipfans.png" class="process-icon">
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">45/50</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="ion-padding-side ion-margin home-border border-c1 bg-dark-2" (click)="showModal('comments',3)" id="cuadro-3">
+        <img src="assets/icon/clock.svg" alt="clock" class="clock-icon">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">100</ion-col>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.comments" | translate}}</ion-col>
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <div class="img-container">
+            <div class="bg-process" [ngStyle]="{'height':cp+'%'}"></div>
+            <img src="assets/st/comment.png" class="process-icon">
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">450/500</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="ion-padding-side ion-margin home-border border-c1 bg-dark-2" (click)="showModal('reprod',4)" id="cuadro-4">
+        <img src="assets/icon/clock.svg" alt="clock" class="clock-icon">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz24 tc1">100</ion-col>
+          <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.reprod" | translate}}</ion-col>
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <div class="img-container">
+            <div class="bg-process" [ngStyle]="{'height':vp+'%'}"></div>
+            <img src="assets/st/video.png" class="process-icon">
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">32/50</ion-col>
+        </ion-row>
+      </ion-col>
+
+
+    </ion-row>
+
+    <span class="ff2 fwl fz16 tc1" style="width: 100%; text-align: center;display: block; margin-top: 6px; margin-bottom: 16px">{{"CAMPAIGNS.finish" | translate}}</span>
+
+    <ion-row>
+      <ion-col size="4">
+        <div style="border: 1px solid #fff; background-color: #232323; border-radius: 10px; padding: 6px; position: relative;">
+          <ion-icon (click)="seeUrl2('1')" name="link" style="position: absolute; right:4px;top: 4px; color: #eee; z-index: 9999"></ion-icon>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz14 tc1">50</ion-col>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.like" | translate}}</ion-col>
+          </ion-row>
+
+          <ion-row class="ion-text-center">
+            <img src="assets/icon/w-like.png" style="width: 24px;margin: auto;">
+          </ion-row>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">50/50</ion-col>
+          </ion-row>
+
+          <span class="fz8 tc1" style="display: block; width: 100%; text-align: center;">{{"CAMPAIGNS.finished" | translate}}: 02/01/2019</span>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div style="border: 1px solid #fff; background-color: #232323; border-radius: 10px; padding: 6px; position: relative;">
+          <ion-icon (click)="seeUrl2('2')" name="link" style="position: absolute; right:4px;top: 4px; color: #eee; z-index: 9999"></ion-icon>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz14 tc1">100</ion-col>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.vipfans" | translate}}</ion-col>
+          </ion-row>
+
+          <ion-row class="ion-text-center">
+            <img src="assets/icon/w-frends.png" style="width: 24px;margin: auto;">
+          </ion-row>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">100/100</ion-col>
+          </ion-row>
+
+          <span class="fz8 tc1" style="display: block; width: 100%; text-align: center;">{{"CAMPAIGNS.finished" | translate}}: 04/01/2019</span>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div style="border: 1px solid #fff; background-color: #232323; border-radius: 10px; padding: 6px; position: relative;">
+          <ion-icon (click)="seeUrl2('4')" name="link" style="position: absolute; right:4px;top: 4px; color: #eee; z-index: 9999"></ion-icon>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz14 tc1">75</ion-col>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.reprod" | translate}}</ion-col>
+          </ion-row>
+
+          <ion-row class="ion-text-center">
+            <img src="assets/icon/w-videos.png" style="width: 24px;margin: auto;">
+          </ion-row>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">75/75</ion-col>
+          </ion-row>
+
+          <span class="fz8 tc1" style="display: block; width: 100%; text-align: center;">{{"CAMPAIGNS.finished" | translate}}: 05/01/2019</span>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div style="border: 1px solid #fff; background-color: #232323; border-radius: 10px; padding: 6px; position: relative;">
+          <ion-icon (click)="seeUrl2('3')" name="link" style="position: absolute; right:4px;top: 4px; color: #eee; z-index: 9999"></ion-icon>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz14 tc1">200</ion-col>
+            <ion-col size="12" class="ion-text-center ff1 fwr fz8 tc1">{{"CAMPAIGNS.comments" | translate}}</ion-col>
+          </ion-row>
+
+          <ion-row class="ion-text-center">
+            <img src="assets/icon/w-followers.png" style="width: 24px;margin: auto;">
+          </ion-row>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center ff2 fwr fz11 tc1">200/200</ion-col>
+          </ion-row>
+
+          <span class="fz8 tc1" style="display: block; width: 100%; text-align: center;">{{"CAMPAIGNS.finished" | translate}}: 06/01/2019</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <br><br>
+
+</ion-content>
+
+<div class="pb100 bg-dark-2 br-c1 br-v-25 modal slideUp" *ngIf="modalDiv">
+
+  <ion-icon (click)="seeUrl()" name="link" style="position: absolute; right:16px;top: 16px; color: #eee; z-index: 9999"></ion-icon>
+
+  <!-- <img (click)="cancelCampaign()" src="assets/new/cancel.svg" alt="" style="width: 28px; position: absolute; right:16px;top: 60px; color: #eee; z-index: 9999;"> -->
+
+  <ion-row class="ion-margin-top ion-margin-horizontal">
+    <ion-col size="12" class="ion-text-center tc3 fz14 ff2">
+      {{"CAMPAIGNS.campaign" | translate}}
+
+      {{type}}
+
+      <span *ngIf="!paused">{{"CAMPAIGNS.actived" | translate}}</span>
+      <span *ngIf="paused">{{"CAMPAIGNS.paused" | translate}}</span>
+    </ion-col>
+  </ion-row>
+
+  <br>
+
+  <ion-row class="ion-margin-horizontal">
+    <ion-col size="4" class="ion-text-center tc1 fz22 ff1">
+      65/100
+    </ion-col>
+    <ion-col size="4" class="ion-text-center tc1 fz22 ff1">
+      <span id="minutes">00</span>:<span>{{seconds}}</span>'
+    </ion-col>
+    <ion-col size="2" class="ion-text-center tc1 fz22 ff1">
+      <img (click)="pauseActive()" [src]="status" alt="" style="width: 28px; position: relative; top: -3px;">
+      <!-- <ion-icon name="pause" style="border: 4px solid #fff; border-radius: 18px; position: relative; top: -4px;"></ion-icon> -->
+    </ion-col>
+
+    <ion-col size="2" class="ion-text-center tc1 fz22 ff1">
+      <img (click)="cancelCampaign()" src="assets/new/cancel.svg" alt="" style="width: 28px; position: relative; top: -3px;">
+      <!-- <ion-icon name="pause" style="border: 4px solid #fff; border-radius: 18px; position: relative; top: -4px;"></ion-icon> -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-horizontal">
+    <ion-col size="4" class="ion-text-center tc3 fz12 ff2">
+      {{type}} <br>
+      {{"CAMPAIGNS.earned" | translate}}
+    </ion-col>
+    <ion-col size="4" class="ion-text-center tc3 fz12 ff2" [innerHtml]="'CAMPAIGNS.time' | translate">
+    </ion-col>
+    <ion-col size="2" class="ion-text-center tc3 fz12 ff2">
+      {{"CAMPAIGNS.pause" | translate}} <br>
+      <!-- {{type}} -->
+    </ion-col>
+    <ion-col size="2" class="ion-text-center tc3 fz12 ff2">
+      {{"CAMPAIGNS.stop" | translate}} <br>
+      <!-- {{type}} -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-horizontal" (click)="closeModal()" style="margin-top: 20px;">
+    <ion-col size="12" class="ion-float-right ion-text-center gradient-1 br15">
+      <span class="ion-padding ff2 fz16 tc1">{{"CAMPAIGNS.close" | translate}}</span>
+    </ion-col>
+  </ion-row>
+
+  <br> 
+
+</div>

@@ -1,0 +1,77 @@
+
+<ion-content class="bg-1">
+
+    <ion-grid class="top-bg01 pt40 pb50">
+
+      <ion-row>
+        <ion-col size="12">
+          <img src="{{avatar}}" alt="avatar" class="avatar mt20">
+          <p class="ion-text-center ff1 fwr fz22 tc1" style="margin: 10px 0">{{name}}</p>
+          <p class="ion-text-center ff2 fwl fz12 tc1" style="padding: 0 16px;">{{message}}</p>
+          <hr class="ion-margin-horizontal separator-01 gradient-1">
+        </ion-col>
+      </ion-row>
+
+      <form [formGroup]="form01">
+
+        <ion-row class="ion-margin">
+          <ion-col size="12" class="bar-background">
+            <div class="gradient-1" [ngStyle]="{'width.%': percentage}" style="height: 10px;">-</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal" *ngIf="step1">
+          <ion-col size="10" class="ff2 fwr fz15 tc1 mt5 ion-text-left">
+            {{"FORM.form9" | translate}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-checkbox color="dark" formControlName="photo" class="mt5">
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal" *ngIf="step2">
+          <ion-col size="10" class="ff2 fwr fz15 tc1 mt5 ion-text-left">
+            {{"FORM.form10" | translate}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-checkbox color="dark" formControlName="folowers" class="mt5">
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal" *ngIf="step3">
+          <ion-col size="10" class="ff2 fwr fz15 tc1 mt5 ion-text-left">
+            {{"FORM.form11" | translate}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-checkbox color="dark" formControlName="posts" class="mt5">
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal" *ngIf="step4">
+          <ion-col size="10" class="ff2 fwr fz15 tc1 mt5 ion-text-left">
+            {{"FORM.form12" | translate}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-checkbox color="dark" formControlName="publication" class="mt5">
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal" *ngIf="step5">
+          <ion-col size="10" class="ff2 fwr fz15 tc1 mt5 ion-text-left">
+            {{"FORM.form13" | translate}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-checkbox color="dark" formControlName="more_folowers" class="mt5">
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+          
+      </form>
+              
+    </ion-grid>
+  
+</ion-content>

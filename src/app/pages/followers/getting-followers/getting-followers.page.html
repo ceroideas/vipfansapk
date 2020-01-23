@@ -1,0 +1,89 @@
+<ion-content fullscreen class="bg-1">
+
+  <ion-grid class="top-bg01 pt60 pb80">
+
+    <img src="{{avatar}}" alt="avatar" class="home-avatar">
+
+    <div class="ion-margin home-border">
+
+      <ion-row>
+
+        <ion-col size="12" class="home-separator mt50">
+          <p class="ion-text-center ff1 fwr fz24 tc1">{{name}}</p>
+        </ion-col>
+
+        <ion-col size="6" class="ion-text-center">
+          <span class="ff2 fwl fz11 tc1">{{"VIPFANS.credit" | translate}}</span>
+        </ion-col>
+        <ion-col size="6" class="ion-text-center" [routerLink]="['/magnetism/magnetism']" routerLinkActive="active">
+          <span class="ff2 fwl fz11 tc1">{{"VIPFANS.mcredit" | translate}}</span>
+        </ion-col>
+
+        <ion-col size="6" class="ion-text-center ion-padding-bottom">
+          <span class="ff1 fwl fz18 tc4">{{text2}}</span>
+        </ion-col>
+        <ion-col size="6" class="ion-text-center ion-padding-bottom">
+          <span class="ff1 fwl fz18 tc1">{{text3}}</span>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+
+    <ion-row class="ion-margin-horizontal">
+      <ion-col size="10">
+        <span class="ion-text-center ff1 fwr fz12 tc1">
+          {{"VIPFANS.howmany" | translate}}
+        </span>
+      </ion-col>
+      <ion-col size="2" class="ion-margin-bottom form-w tc4">
+        <ion-input min="0" max="999" onkeyup="this.value > 999 ? this.value = 999 : ''" no-padding style="padding: 3px 10px !important" type="number" class="fz16"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="form01" class="ion-margin-top" (ngSubmit)="onSubmit()">
+
+      <ion-row class="ion-margin-horizontal">
+        <ion-col size="12">
+          <p class="ion-margin-horizontal ion-text-center ff2 fwl fz12 tc1">
+            {{"VIPFANS.text1" | translate}}
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row class="ion-margin-horizontal ion-margin-bottom form-w tc3">
+        <ion-col size="2">
+          <img src="assets/icon/c-window.png" alt="avatar" class="nav-icon">
+        </ion-col>
+        <ion-col size="10">
+          <ion-input type="url" class="fz12" formControlName="url" placeholder="Pega link de otra cuenta de instagram">
+          </ion-input>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row no-padding no-margin class="ion-margin-horizontal ion-margin-bottom form-w tc3" style="height: 40px">
+        <ion-col no-padding no-margin size="2">
+          <img no-padding no-margin src="assets/icon/c-window.png" alt="avatar" class="nav-icon">
+        </ion-col>
+        <ion-col no-padding no-margin size="10">
+          <ion-input type="url" class="fz12" formControlName="url" [placeholder]="'VIPFANS.paste' | translate">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="gradient-1 button-2 tc1" (click)="onSubmit()">
+        <!-- <ion-col size="4">
+        </ion-col> -->
+        <ion-col size="12" class="ion-text-left ion-margin-left ff1 fz16 mt5">
+          <div style="width: 100%; text-align: center;">
+            <img src="assets/icon/w-sending.png" alt="w-sending" class="ion-float-left nav-icon" style="position: absolute;top:-4px; left: 80px;">
+            <span style="display: inline-block; left: 10px;position: relative;">{{"VIPFANS.send" | translate}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+  </ion-grid>
+
+</ion-content>

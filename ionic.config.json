@@ -1,0 +1,7 @@
+{
+  "name": "instavip",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

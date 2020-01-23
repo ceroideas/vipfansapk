@@ -1,0 +1,72 @@
+
+<ion-content fullscreen class="bg-3">
+
+  <ion-grid class="top-bg01 pt50 pb50">
+
+      <img src="{{avatar}}" alt="avatar" class="home-avatar">
+      
+      <div class="ion-margin home-border">
+
+        <ion-row>
+          <ion-col size="12" class="home-separator mt50">
+            <p class="ion-text-center ff1 fwr fz24 tc1">{{name}}</p>
+          </ion-col>
+
+          <ion-col size="4" class="ion-text-center">
+            <span class="ion-margin-horizontal ff2 fwl fz11 tc1">SEGUIDORES</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <span class="ion-margin-horizontal ff2 fwl fz11 tc1">SEGUIDOS</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <span class="ion-margin-horizontal ff2 fwl fz11 tc1">POST</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center ion-padding-bottom">
+            <span class="ion-margin-horizontal  ff1 fwl fz18 tc1">{{text2}}</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center ion-padding-bottom">
+            <span class="ion-margin-horizontal ff1 fwl fz18 tc1">{{text3}}</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center ion-padding-bottom">
+            <span class="ion-margin-horizontal ff1 fwl fz18 tc1">{{text4}}</span>
+          </ion-col>
+        </ion-row>
+      
+      </div>
+
+      <button type="submit" class="ion-margin-top gradient-1 button-2 tc1"
+        [routerLink]="[ '/home' ]" routerLinkActive="active">
+        CONSEGUIR SEGUIDORES PARA MI CUENTA
+      </button>
+
+      <form [formGroup]="form01" class="ion-margin-top" (ngSubmit)="onSubmit()">
+
+        <ion-row class="ion-margin-horizontal">
+          <ion-col size="12">
+            <p class="ion-margin-horizontal ion-text-center ff1 fwl fz15 tc1">PUEDES CONSEGUIR SEGUIDORES</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal ion-margin-bottom form-w tc3">
+          <ion-col size="2">
+            <img src="assets/icon/c-window.png" alt="avatar" class="nav-icon">
+          </ion-col>
+          <ion-col size="10">
+            <ion-input type="url" placeholder="PEGA LINK DE OTRA CUENTA DE INSTAGRAM" class="fz12"
+                       formControlName="url">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <button type="submit" class="ion-margin-top gradient-1 button-2 tc1" (click)="onSubmit()">
+          <ion-buttons slot="start" class="fz24">
+            <img src="assets/icon/w-sending.png" alt="avatar" class="nav-icon">
+            ENVIAR
+          </ion-buttons>
+        </button>
+
+      </form>
+
+    </ion-grid>
+  
+</ion-content>
