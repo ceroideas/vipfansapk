@@ -20,7 +20,7 @@ export class Analyzing02Page implements OnInit {
   text2: string = 'PUEDES EMPEZAR A USAR LA APP';
   userId: string = '0011';
 
-  checkbox;
+  checkbox = true;
 
   constructor(private _formBuilder: FormBuilder,
     private toast: ToastController,

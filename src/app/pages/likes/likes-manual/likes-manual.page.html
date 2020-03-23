@@ -19,7 +19,7 @@
         <!-- <img [src]="" alt="{{publication.name}}"
           class="manual-avatar-img"> -->
           <div [ngClass]="(publication | vip) ? ' premium-border avatar-img' : 'avatar-img'" [ngStyle]="{'background-image':'url('+publication.avatar+')'}"></div>
-        <span class="manual-avatar-p tc1">{{publication.username}}</span>
+        <!-- <span class="manual-avatar-p tc1">{{publication.username}}</span> -->
       </div>
     </ion-row>
 
@@ -35,7 +35,8 @@
         <img src="../../../assets/imgs/samples/{{modalPicture}}" alt="{{modalPicture}}" class="avatar-3 border-modal">
       </ion-col> -->
     <ion-col size="12" class="ion-text-center ff1 fz24 tc1 mt20">
-      {{modalName}}
+      <!-- {{modalName}} -->
+      <i>"{{comment}}"</i>
     </ion-col>
   </ion-row>
 

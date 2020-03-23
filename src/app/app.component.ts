@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AutenticationService } from './services/autentication/autentication.service'
 import { AuthService } from './services/auth/auth.service'
+import { ApiService } from './service/api.service'
 
 // Import Auth0Cordova
 import Auth0Cordova from '@auth0/cordova';
@@ -39,8 +40,13 @@ export class AppComponent {
     private authService: AutenticationService,
     private auth: AuthService,
     private nav: NavController,
+    private api: ApiService,
     private translate: TranslateService
   ) {
+
+    this.api.getRestrictions().subscribe(data=>{
+      localStorage.setItem('restrictions',JSON.stringify(data));
+    })
 
     let ln;
 

@@ -3,10 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
-import { AgeList, GenderList, ThematicsList } from '../../../services/forms/form.service';
+import { AgeList, GenderList } from '../../../services/forms/form.service';
 import { ProvincesService } from '../../../services/provinces/provinces.service';
 
 import { TranslateService } from '@ngx-translate/core';
+
+import { ApiService } from '../../../service/api.service'
 
 @Component({
   selector: 'app-form01',
@@ -24,17 +26,26 @@ export class Form01Page implements OnInit {
   form01: FormGroup;
   ageList:Array<any> = AgeList;
   genderList:Array<any> = GenderList;
-  thematicsList:Array<any> = ThematicsList;
+  thematicsList:any;
   provincesList:Array<any>;
 
   promociones;
   email;
 
+  checkbox = false;
+
+  show = 'disclaimer';
+
   constructor(private _formBuilder: FormBuilder,
               private router: Router,
               private translate: TranslateService,
               private toast: ToastController,
-              private provincesService: ProvincesService) {}
+              private api: ApiService,
+              private provincesService: ProvincesService) {
+    this.api.getTheme().subscribe(data=>{
+      this.thematicsList = data;
+    });
+  }
 
   ngOnInit() {
 
@@ -43,8 +54,9 @@ export class Form01Page implements OnInit {
       gender: ['', Validators.required],
       province: ['', Validators.required],
       thematic: ['', Validators.required],
-      promotions: ['', Validators.required],
-      email: ['', Validators.required]
+      promotions: [''],
+      email: ['', Validators.required],
+      conditions: [false, Validators.required]
     });
 
     this.getProvinces();
@@ -55,24 +67,40 @@ export class Form01Page implements OnInit {
 
     this.data = [];
   
-    this.provincesService.getProvinces()
-      .then(data => {
-        this.data = data;        
-        this.provincesList = this.data;
-      },
-      error => {
-        // console.error(error);
-      });
+    // this.provincesService.getProvinces()
+    //   .then(data => {
+    //     this.data = data;        
+    //     this.provincesList = this.data;
+    //   },
+    //   error => {
+    //     // console.error(error);
+    //   });
 
   }
 
   onSubmit(){
 
-    if (this.promociones && !this.email) {
+    this.form01.value['id'] = this.user.id;
+
+    if (!this.email) {
       return this.toast.create({duration:3000,message:this.translate.instant("FORM.form1-1")}).then((t)=>{t.present()})
     }
 
+    this.api.saveInformation(this.form01.value).subscribe(data=>{
+      console.log('saved',data);
+    })
+
     this.router.navigate(['/forms/analyzing01']);
+
+  }
+
+  onSubmit1() {
+
+    if (!this.checkbox) {
+      return this.toast.create({duration:3000,message:this.translate.instant("FORM.form29")}).then((t)=>{t.present()})
+    }
+
+    this.show = 'form';
 
   }
 

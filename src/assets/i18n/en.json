@@ -5,7 +5,7 @@
 	},
 	"FORM": {
 		"form1":"We need to ask you some questions to offer a better quality of service!!",
-		"form1-1":"If you want to receive promotions you must write your email!",
+		"form1-1":"You must write your email!",
 		"form2":"AGE",
 		"form3":"GENDER",
 		"form4":"PROVINCE",
@@ -44,7 +44,8 @@
 		"tut4":"Increase your videos reproductions in a funny way. ",
 		"tut5":"Get personal comments of Spanish users in your posts.",
 		"tut6":"Revise, pause or cancel all your campaigns  up to the minute.",
-		"tut7":"Create your personal campaigns."
+		"tut7":"Create your personal campaigns.",
+		"tut7":"You can change your magnetism credits for Likes, Vipfans, Comments and Reproductions."
 	},
 	"MENU": {
 		"shop":"Shop",

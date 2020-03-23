@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Events } from '@ionic/angular';
+import { Events, ToastController } from '@ionic/angular';
 
 import { PublicationList } from '../../../services/likes/likes.service';
 import { FooterService } from '../../../services/components/footer.service';
@@ -21,18 +21,21 @@ export class VideosManualPage implements OnInit {
   modalDiv:boolean = false;
   modalName:string;
   modalId:any;
-  modalQuantity:number = 0.3;
+  modalQuantity:number;
   // publicationList:Array<any> = PublicationList;
   publicationList:any;
 
-  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe) {
-    if (this.vip.transform(this.user)) {
-      this.modalQuantity+=0.1;
-    }
+  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe, public toast: ToastController) {
+    this.api.getGains().subscribe((data:any)=>{
+      this.modalQuantity = (data.videos || 0.3);
+      if (this.vip.transform(this.user)) {
+        this.modalQuantity+=(data.premium || 0.1);
+      }
+    })
   }
 
   ngOnInit() {
-    this.api.usersAll().subscribe(data=>{
+    this.api.videosAll().subscribe(data=>{
       this.publicationList = data;
     })
   }
@@ -90,6 +93,27 @@ export class VideosManualPage implements OnInit {
     this.events.publish('addVideos',this.modalQuantity);
 
     this.modalDiv = false;
+
+    let b = localStorage.getItem('buttonvp');
+    if (b) {
+      let c = JSON.parse(b);
+      if (typeof c[3] !== 'undefined') {
+        c[3]++;
+        if (c[3] == c[0]) {
+          this.toast.create({message:'Has completado la tarea "Reproducir '+c[0]+' vídeos"', duration:3000}).then(t=>{t.present()});
+          localStorage.removeItem('buttonvp');
+          this.events.publish('addMagnetism',c[1]);
+          if (!localStorage.getItem('buttonlp') && !localStorage.getItem('buttonfp') && !localStorage.getItem('buttoncp') && !localStorage.getItem('buttonvp')) {
+            this.events.publish('changeVideo',false);
+          }
+        }else{
+          localStorage.setItem('buttonvp',JSON.stringify(c));
+        }
+      }else{
+        c[3]=1;
+        localStorage.setItem('buttonvp',JSON.stringify(c));
+      }
+    }
 
   }
 

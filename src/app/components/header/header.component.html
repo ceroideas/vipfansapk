@@ -27,6 +27,19 @@
         </circle>
       </svg>
     </div>
+
+    <div *ngIf="tutorial && tutorial == 8">
+      <p class="p-tutorial" id="p-tutorial-8">{{"TUTORIAL.tut8" | translate}}</p>
+      <svg width="360" height="360" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 9998; bottom: -300px; right: 0">
+        <circle cx="280" cy="90" fill="none" r="10" stroke="#ffda76" stroke-width="8">
+          <animate attributeName="r" from="150" to="250" dur="1s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" from="1" to="0" dur="1s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="280" cy="90" fill="#383a36cc" r="150">
+          <animate attributeName="r" from="100" to="150" dur=".1s" begin="0s" repeatCount="1"/>
+        </circle>
+      </svg>
+    </div>
     
     <ion-toolbar style="--background: none; z-index: 9999;">
       <ion-buttons slot="start" style="opacity: 0">
@@ -35,8 +48,11 @@
       <ion-buttons (click)="nextTutorial(7)" slot="start">
         <img [ngStyle]="tutorial && tutorial == 6 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-search.png" alt="search" class="nav-icon">
       </ion-buttons>
-      <ion-buttons (click)="completeTutorial()" slot="start">
+      <ion-buttons (click)="nextTutorial(8)" slot="start">
           <img [ngStyle]="tutorial && tutorial == 7 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/c-users-group.png" alt="avatar" class="nav-icon-footer">
+      </ion-buttons>
+      <ion-buttons (click)="completeTutorial()" slot="end">
+          <img [ngStyle]="tutorial && tutorial == 8 ? {'opacity':'1'} : {'opacity':'0'}" src="assets/icon/iman-1.png" alt="avatar" class="nav-icon-footer">
       </ion-buttons>
     </ion-toolbar>
 

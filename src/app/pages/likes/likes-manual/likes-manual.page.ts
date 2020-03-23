@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Events } from '@ionic/angular';
+import { Events, ToastController } from '@ionic/angular';
 
 import { PublicationList } from '../../../services/likes/likes.service';
 import { FooterService } from '../../../services/components/footer.service';
@@ -21,20 +21,24 @@ export class LikesManualPage implements OnInit {
   modalDiv:boolean = false;
   modalName:string;
   modalId:any;
-  modalQuantity:number = 0.3;
+  modalQuantity:number;
   publicationList:any;
   // publicationList:Array<any> = PublicationList;
+  comment:string;
 
   users:any = [];
 
-  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe) {
-    if (this.vip.transform(this.user)) {
-      this.modalQuantity+=0.1;
-    }
+  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe, public toast: ToastController) {
+    this.api.getGains().subscribe((data:any)=>{
+      this.modalQuantity = (data.likes || 0.3);
+      if (this.vip.transform(this.user)) {
+        this.modalQuantity+=(data.premium || 0.1);
+      }
+    })
   }
 
   ngOnInit() {
-    this.api.usersAll().subscribe(data=>{
+    this.api.likesAll().subscribe(data=>{
       this.publicationList = data;
     })
   }
@@ -49,6 +53,7 @@ export class LikesManualPage implements OnInit {
 
     this.modalPicture = this.publicationList[index].avatar;
     this.modalName = this.publicationList[index].name;
+    this.comment = this.publicationList[index].comment;
     this.modalId = this.publicationList[index].id;
     this.modalDiv = true;
 
@@ -90,6 +95,27 @@ export class LikesManualPage implements OnInit {
     this.events.publish('addLikes',this.modalQuantity);
 
     this.modalDiv = false;
+
+    let b = localStorage.getItem('buttonlp');
+    if (b) {
+      let c = JSON.parse(b);
+      if (typeof c[3] !== 'undefined') {
+        c[3]++;
+        if (c[3] == c[0]) {
+          this.toast.create({message:'Has completado la tarea "Dar '+c[0]+' Me Gusta"', duration:3000}).then(t=>{t.present()});
+          localStorage.removeItem('buttonlp');
+          this.events.publish('addMagnetism',c[1]);
+          if (!localStorage.getItem('buttonlp') && !localStorage.getItem('buttonfp') && !localStorage.getItem('buttoncp') && !localStorage.getItem('buttonvp')) {
+            this.events.publish('changeVideo',false);
+          }
+        }else{
+          localStorage.setItem('buttonlp',JSON.stringify(c));
+        }
+      }else{
+        c[3]=1;
+        localStorage.setItem('buttonlp',JSON.stringify(c));
+      }
+    }
   }
 
   onlyClose(){this.modalDiv = false;}

@@ -2,6 +2,8 @@
   <video class="bg-video-1" #loginAnimation autoplay="true" poster="../../../assets/imgs/splash-screen.jpg" (click)="muteVideo()">
     <source src="../../../assets/videos/splash-screen.mp4" type="video/mp4">
   </video>
+
+  <span *ngIf="tocapantalla" style="position: absolute; color: rgba(255,255,255,.5); font-size: 10px; bottom: 15px; display: block; left: 0; right: 0; text-align: center;">Toca la pantalla para silenciar</span>
 </ion-content>
 
 <ion-content class="bg-1" *ngIf="!showVideo">
@@ -74,6 +76,7 @@
       </ion-col>
 
       <ion-col size="12">
+        <!-- <button class="ion-margin-top gradient-1 button-1 tc1" (click)="facebookLogin()"> -->
         <button class="ion-margin-top gradient-1 button-1 tc1" (click)="goToStart()">
           {{"LOGIN.access" | translate}}
         </button>

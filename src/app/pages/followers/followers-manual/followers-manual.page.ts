@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Events } from '@ionic/angular';
+import { Events, ToastController } from '@ionic/angular';
 
 // import { UsersList } from '../../../services/likes/likes.service';
 import { FooterService } from '../../../services/components/footer.service';
@@ -21,14 +21,17 @@ export class FollowersManualPage implements OnInit {
   modalDiv:boolean = false;
   modalName:string;
   modalId:any;
-  modalQuantity:number = 0.3;
+  modalQuantity:number;
   usersList:any;
   // usersList:Array<any> = UsersList;
 
-  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe) {
-    if (this.vip.transform(this.user)) {
-      this.modalQuantity+=0.1;
-    }
+  constructor(public events: Events, public api: ApiService, private footerService: FooterService, public vip: VipPipe, public toast: ToastController) {
+    this.api.getGains().subscribe((data:any)=>{
+      this.modalQuantity = (data.followers || 0.3);
+      if (this.vip.transform(this.user)) {
+        this.modalQuantity+=(data.premium || 0.1);
+      }
+    })
   }
 
   ngOnInit() {
@@ -91,6 +94,27 @@ export class FollowersManualPage implements OnInit {
     this.events.publish('addFollowers',this.modalQuantity);
 
     this.modalDiv = false;
+
+    let b = localStorage.getItem('buttonfp');
+    if (b) {
+      let c = JSON.parse(b);
+      if (typeof c[3] !== 'undefined') {
+        c[3]++;
+        if (c[3] == c[0]) {
+          this.toast.create({message:'Has completado la tarea "Seguir '+c[0]+' VipFans"', duration:3000}).then(t=>{t.present()});
+          localStorage.removeItem('buttonfp');
+          this.events.publish('addMagnetism',c[1]);
+          if (!localStorage.getItem('buttonlp') && !localStorage.getItem('buttonfp') && !localStorage.getItem('buttoncp') && !localStorage.getItem('buttonvp')) {
+            this.events.publish('changeVideo',false);
+          }
+        }else{
+          localStorage.setItem('buttonfp',JSON.stringify(c));
+        }
+      }else{
+        c[3]=1;
+        localStorage.setItem('buttonfp',JSON.stringify(c));
+      }
+    }
 
   }
 

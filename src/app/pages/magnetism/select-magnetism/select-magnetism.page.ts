@@ -20,6 +20,13 @@ export class SelectMagnetismPage implements OnInit {
 
   selected;
 
+  user = JSON.parse(localStorage.getItem('profile'));
+
+  totallp:any = parseFloat(this.user.likes).toFixed(1);
+  totalfp:any = parseFloat(this.user.followers).toFixed(1);
+  totalcp:any = parseFloat(this.user.comments).toFixed(1);
+  totalvp:any = parseFloat(this.user.videos).toFixed(1);
+
   constructor(public modalController: ModalController,
     public toast: ToastController,
     public navParams: NavParams,
@@ -67,7 +74,7 @@ export class SelectMagnetismPage implements OnInit {
 
       this.commentsIcon = "c-followers.png";
 
-      this.selected = 'followers';
+      this.selected = 'comments';
     }else{
 
       this.commentsIcon = "w-followers.png";
@@ -88,7 +95,7 @@ export class SelectMagnetismPage implements OnInit {
 
       this.followersIcon = "c-frends.png";
 
-      this.selected = 'frends';
+      this.selected = 'followers';
     }else{
 
       this.followersIcon = "w-frends.png";
@@ -109,7 +116,7 @@ export class SelectMagnetismPage implements OnInit {
 
       this.likeIcon = "c-like.png";
 
-      this.selected = 'like';
+      this.selected = 'likes';
     }else{
 
       this.likeIcon = "w-like.png";

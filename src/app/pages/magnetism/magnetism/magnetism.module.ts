@@ -14,6 +14,8 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { HttpLoaderFactory } from '../../../app.module';
 
+import { PackagesPipe } from '../../../pipes/packages/packages.pipe';
+
 import { ModalController } from '@ionic/angular';
 
 const routes: Routes = [
@@ -37,7 +39,8 @@ const routes: Routes = [
         }
     })
   ],
-  declarations: [ExchangeMagnetismPage, MagnetismPage/*, SelectMagnetismPage, SelectMagnetismMessageModalPage*/],
+  declarations: [ExchangeMagnetismPage, MagnetismPage,PackagesPipe/*, SelectMagnetismPage, SelectMagnetismMessageModalPage*/],
   entryComponents: [ExchangeMagnetismPage/*, SelectMagnetismPage, SelectMagnetismMessageModalPage*/],
+  exports: [PackagesPipe]
 })
 export class MagnetismPageModule {}

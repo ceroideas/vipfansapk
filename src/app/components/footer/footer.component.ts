@@ -19,9 +19,15 @@ export class FooterComponent {
   videosIcon: string = "b-videos.png";
   tutorial;
 
+  sourceVideo=false;
+
   constructor(private router: Router,
     public events: Events,
     private footerService: FooterService) {
+
+    this.events.subscribe('changeVideo',(a)=>{
+      this.sourceVideo = a;
+    });
 
     let tutorial:any = localStorage.getItem('tutorial');
 
@@ -34,6 +40,12 @@ export class FooterComponent {
         if (tutorial == 5) {this.tutorial = 5;}
         if (tutorial == 6) {this.tutorial = 6;}
         if (tutorial == 7) {this.tutorial = 7;}
+        if (tutorial == 8) {
+          setTimeout(()=>{
+            this.router.navigate(['/magnetism/magnetism']);
+          },1000)
+          this.tutorial = 8;
+        }
       }
     }else{
       this.tutorial = 1;
@@ -158,12 +170,17 @@ export class FooterComponent {
 
     this.magnetismAnimation.nativeElement.play();
 
-    setTimeout(() => {
+    if (this.sourceVideo) {
+      this.router.navigate(['/magnetism/magnetism']);
+    }else{
+
+     setTimeout(() => {
 
       this.magnetismIconToggle();
       this.router.navigate(['/magnetism/magnetism']);
 
      }, 2000);
+    }
     
   }
 

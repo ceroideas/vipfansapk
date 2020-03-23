@@ -590,6 +590,14 @@
   margin-bottom: 20px;
 }
 
+.available-tasks-2 {
+  border: 1px solid silver;
+  padding: 16px;
+  background-color: #01335c;
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+}
 .available-tasks:hover {
   background-color: #01335c;
 }

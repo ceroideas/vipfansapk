@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, Events, ModalController } from '@ionic/angular';
+import { MenuController, Events, ModalController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 import { SelectMagnetismPage } from '../../pages/magnetism/select-magnetism/select-magnetism.page';
@@ -26,6 +26,8 @@ export class HeaderComponent {
   videos:any = 0;
   comments:any = 0;
 
+  magnetism:any = 0;
+
   processIcon:string = 'w-search.png';
   automaticIcon: string = "users-group.png";
   user;
@@ -36,6 +38,7 @@ export class HeaderComponent {
     public events: Events,
     public api: ApiService,
     private router: Router,
+    private nav: NavController,
     private translate: TranslateService,
     private modalController: ModalController,
     private footerService: FooterService) {
@@ -50,6 +53,11 @@ export class HeaderComponent {
       this.presentSelectMagnetismModal();
     })
 
+    this.likes = parseFloat(this.user.likes).toFixed(1);
+    this.followers = parseFloat(this.user.followers).toFixed(1);
+    this.videos = parseFloat(this.user.videos).toFixed(1);
+    this.comments = parseFloat(this.user.comments).toFixed(1);
+    this.magnetism = parseFloat(this.user.magnetism).toFixed(1);
 
   }
 
@@ -62,6 +70,7 @@ export class HeaderComponent {
     this.events.publish('completeTutorial');
 
     localStorage.setItem('tutorial',this.tutorial.toString());
+    this.nav.pop();
   }
 
   nextTutorial(i)
@@ -69,24 +78,50 @@ export class HeaderComponent {
     if (i-1 != this.tutorial) {
       return false;
     }
+
+    if (i == 8) {
+      this.router.navigate(['/magnetism/magnetism']);
+    }
+
     this.tutorial = i;
 
     localStorage.setItem('tutorial',this.tutorial.toString());
   }
 
+  addToUser(likes,vipfans,comments,videos) {
+    this.api.saveMagnetism({id:this.user.id,likes:likes,vipfans:vipfans,comments:comments,videos:videos}).subscribe(data=>{
+      localStorage.setItem('profile',JSON.stringify(data));
+    })
+  }
+
+  resetToUser(likes,vipfans,comments,videos) {
+    this.api.resetMagnetism({id:this.user.id,likes:likes,vipfans:vipfans,comments:comments,videos:videos}).subscribe(data=>{
+      localStorage.setItem('profile',JSON.stringify(data));
+      this.user = data;
+      this.magnetism = parseFloat(this.user.magnetism).toFixed(1);
+      this.quantity = this.magnetism;
+
+      this.events.publish('reloadCredits');
+    })
+  }
+
   ngOnInit() {
 
     this.events.subscribe('resetLikes',(c)=>{
-      this.likes = 0;
+      this.likes = "0.0";
+      this.resetToUser(1,null,null,null);
     })
     this.events.subscribe('resetFollowers',(c)=>{
-      this.followers = 0;
+      this.followers = "0.0";
+      this.resetToUser(null,1,null,null);
     })
     this.events.subscribe('resetComments',(c)=>{
-      this.comments = 0;
+      this.comments = "0.0";
+      this.resetToUser(null,null,1,null);
     })
     this.events.subscribe('resetVideos',(c)=>{
-      this.videos = 0;
+      this.videos = "0.0";
+      this.resetToUser(null,null,null,1);
     })
 
     this.events.subscribe('addLikes',(likes)=>{
@@ -97,6 +132,7 @@ export class HeaderComponent {
 
       this.likes = total.toFixed(1);
       this.quantity = this.likes;
+      this.addToUser(parseFloat(likes),null,null,null);
     });
 
     this.events.subscribe('addFollowers',(likes)=>{
@@ -107,6 +143,7 @@ export class HeaderComponent {
 
       this.followers = total.toFixed(1);
       this.quantity = this.followers;
+      this.addToUser(null,parseFloat(likes),null,null);
     })
 
     this.events.subscribe('addVideos',(likes)=>{
@@ -117,6 +154,7 @@ export class HeaderComponent {
 
       this.videos = total.toFixed(1);
       this.quantity = this.videos;
+      this.addToUser(null,null,parseFloat(likes),null);
     })
 
     this.events.subscribe('addComments',(likes)=>{
@@ -127,6 +165,22 @@ export class HeaderComponent {
 
       this.comments = total.toFixed(1);
       this.quantity = this.comments;
+      this.addToUser(null,null,null,parseFloat(likes));
+    })
+
+    /**/
+
+    this.events.subscribe('addMagnetism',(m)=>{
+      let total = parseFloat(this.magnetism);
+      total += parseFloat(m);
+
+      console.log(total);
+
+      this.magnetism = total.toFixed(1);
+
+      this.api.saveMagnetism({id:this.user.id,magnetism:m}).subscribe(data=>{
+        localStorage.setItem('profile',JSON.stringify(data));
+      })
     })
 
     this.footerService.currentSection.subscribe(section => {
@@ -181,7 +235,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "c-users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'process') {
 
         this.title = this.translate.instant("CAMPAIGNS.campaigns");
@@ -190,7 +244,7 @@ export class HeaderComponent {
         this.processIcon = 'c-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'shop') {
 
         this.title = this.translate.instant("MENU.shop");
@@ -199,7 +253,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'transfer_magnetism') {
 
         this.title = this.translate.instant("MENU.transfer");
@@ -208,7 +262,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'magnetism') {
 
         this.title = this.translate.instant("MAGNETISM.magnetism");
@@ -217,7 +271,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'become_premium') {
 
         this.title = "Hazte Vip";
@@ -226,7 +280,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'gestion') {
 
         this.title = this.translate.instant("MENU.gestion");
@@ -235,7 +289,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else if (section == 'share') {
 
         this.title = this.translate.instant("MENU.invite");
@@ -244,7 +298,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
       } else {
 
         this.title = "";
@@ -253,7 +307,7 @@ export class HeaderComponent {
         this.processIcon = 'w-search.png';
         this.automaticIcon = "users-group.png";
 
-        this.quantity = 0;
+        this.quantity = this.magnetism;
         
       }
 

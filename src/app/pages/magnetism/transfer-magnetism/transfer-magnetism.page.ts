@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 
 import { TransferMagnetismModalPage } from '../transfer-magnetism-modal/transfer-magnetism-modal.page';
 
+import { ApiService } from '../../../service/api.service';
+
 import { FooterService } from '../../../services/components/footer.service';
 
 @Component({
@@ -17,16 +19,22 @@ export class TransferMagnetismPage implements OnInit {
   percentage: number = 30;
   userId:string = '0011';
   form01: FormGroup;
+  usersList:any;
 
   constructor(private _formBuilder: FormBuilder,
     public modalController: ModalController,
     private router: Router,
     private events: Events,
+    public api: ApiService,
     private footerService: FooterService) {
 
   }
 
   ngOnInit() {
+
+    this.api.usersAll().subscribe(data=>{
+      this.usersList = data;
+    })
 
     this.form01 = this._formBuilder.group({
       url: ['', Validators.required]

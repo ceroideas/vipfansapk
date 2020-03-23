@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 export const AgeList:Array<any> = [
   {value: 16},
   {value: 17},
@@ -106,45 +107,49 @@ export const GenderList:Array<any> = [
   }
 ];
 
-export const ThematicsList:Array<any> = [
-  {
-    value: 1,
-    name: 'Deportes'
-  },
-  {
-    value: 2,
-    name: 'Música'
-  },
-  {
-    value: 3,
-    name: 'Videojuegos'
-  },
-  {
-    value: 4,
-    name: 'Moda/Belleza'
-  },
-  {
-    value: 5,
-    name: 'Fitnes'
-  },
-  {
-    value: 6,
-    name: 'Estilo de vida'
-  },
-  {
-    value: 7,
-    name: 'Humor/memes'
-  },
-  {
-    value: 8,
-    name: 'Cultura'
-  }
-];
+// export var ThematicsList:any;
+
+// export var ThematicsList:Array<any> = [
+//   {value: 1, name: 'Deportes'},
+//   {value: 2, name: 'Aventura'},
+//   {value: 3, name: 'Motor'},
+//   {value: 4, name: 'Noticias'},
+//   {value: 5, name: 'Televisión'},
+//   {value: 6, name: 'Fotográfia / vídeo'},
+//   {value: 7, name: 'Música'},
+//   {value: 8, name: 'Videojuegos'},
+//   {value: 9, name: 'Moda'},
+//   {value: 10, name: 'Belleza'},
+//   {value: 11, name: 'Fitnes'},
+//   {value: 12, name: 'Estilo de vida'},
+//   {value: 13, name: 'Humor / memes'},
+//   {value: 14, name: 'Cultura'},
+//   {value: 15, name: 'Religión'},
+//   {value: 16, name: 'Política'},
+//   {value: 17, name: 'LGBT'},
+//   {value: 18, name: 'Negocios'},
+//   {value: 19, name: 'Compras'},
+//   {value: 20, name: 'Sorteos'},
+//   {value: 21, name: 'Naturaleza'},
+//   {value: 22, name: 'Animales / mascota'},
+//   {value: 23, name: 'Gastronomía'},
+//   {value: 24, name: 'Viajes / Turismo'},
+//   {value: 25, name: 'Tecnología'},
+//   {value: 26, name: 'Arte'},
+//   {value: 27, name: 'Danza'},
+//   {value: 28, name: 'Tiempo libre'},
+//   {value: 29, name: 'Aplicaciones'},
+//   {value: 30, name: 'Amistad'},
+//   {value: 31, name: 'Compra'},
+//   {value: 32, name: 'Producto / servicio'},
+//   {value: 33, name: 'Blog personal'},
+//   {value: 34, name: 'Otros'}
+// ];
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
-
-  constructor() { }
+  constructor() {
+  }
 }

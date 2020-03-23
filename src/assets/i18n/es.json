@@ -5,7 +5,7 @@
 	},
 	"FORM": {
 		"form1":"Para poder ofrecerte una mejor calidad de nuestro servicio, necesitamos hacerte unas preguntas!!",
-		"form1-1":"Si quiere recibir promociones debe escribir su email!",
+		"form1-1":"Debe escribir su email!",
 		"form2":"EDAD",
 		"form3":"GÉNERO",
 		"form4":"PROVINCIA",
@@ -44,7 +44,8 @@
 		"tut4":"Incrementa las reproducciones de tus videos de forma divertida.",
 		"tut5":"Obten comentarios personalizados de usuarios españoles para para tus publicaciones.",
 		"tut6":"Revisa, pausa o cancela todas tus campañas a tiempo real",
-		"tut7":"Crea tus propias campañas personalizadas."
+		"tut7":"Crea tus propias campañas personalizadas.",
+		"tut8":"Puedes cambiar tus créditos de magnetismo por Me Gusta, Vipfans, Comentarios y Reproducciones."
 	},
 	"MENU": {
 		"shop":"Tienda",

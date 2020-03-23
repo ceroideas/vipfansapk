@@ -135,13 +135,18 @@
         </ion-buttons>
 
         <div class="div-icon" style="position: relative; z-index: 9999; top: -3px;">
-            <video style="width: 60px;height: 60px;" #magnetismAnimation poster="../../../assets/imgs/gif1.png"
+            <video *ngIf="!sourceVideo" style="width: 60px;height: 60px;" #magnetismAnimation poster="../../../assets/imgs/gif1.png"
             (click)="playMagnetismAnimation()">
             <source src="../../../assets/videos/gif1.webm" type="video/webm">
           </video>
-          <img src="../../../assets/icon/iman-1.png" alt="top" class="footer-icon"
+
+          <video *ngIf="sourceVideo" style="width: 60px;height: 60px;" loop autoplay #magnetismAnimation poster="../../../assets/imgs/gif1.png"
+            (click)="playMagnetismAnimation()">
+            <source src="../../../assets/videos/gif2.webm" type="video/webm">
+          </video>
+          <!-- <img src="../../../assets/icon/iman-1.png" alt="top" class="footer-icon"
                                                     [routerLink]="['/magnetism/magnetism']" routerLinkActive="active"
-                                                    (click)="magnetismIconToggle()">
+                                                    (click)="magnetismIconToggle()"> -->
         </div>
 
         <ion-buttons slot="end" class="mr-10" style="position: relative; top: 6px;">

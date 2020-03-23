@@ -26,7 +26,7 @@
             </ion-col>
             <ion-col size="12" class="ion-text-center">
               <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.lk" | translate}} <br>
-              <span class="fz13" style="margin-top: 8px; display: block;">10</span></span>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{likes}}</span></span>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -37,7 +37,7 @@
             </ion-col>
             <ion-col size="12" class="ion-text-center">
               <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.vf" | translate}} <br>
-              <span class="fz13" style="margin-top: 8px; display: block;">12</span></span>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{followers}}</span></span>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -48,7 +48,7 @@
             </ion-col>
             <ion-col size="12" class="ion-text-center">
               <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.cm" | translate}} <br>
-              <span class="fz13" style="margin-top: 8px; display: block;">25</span></span>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{videos}}</span></span>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -59,7 +59,7 @@
             </ion-col>
             <ion-col size="12" class="ion-text-center">
               <span style="margin-top: -6px; display: block;" class="ff2 fwl fz8 tc1">{{"MAGNETISM.vd" | translate}} <br>
-              <span class="fz13" style="margin-top: 8px; display: block;">30</span></span>
+              <span class="fz13" style="margin-top: 8px; display: block;">{{comments}}</span></span>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -128,51 +128,63 @@
           <p class="ion-text-center ff1 fwr fz16 tc1" *ngIf="elements == 0">{{"MAGNETISM.notasks" | translate}} <br> <small>{{"MAGNETISM.notasks2" | translate}}</small></p>
         </ion-col>
 
-        <ion-col size="12">
-          <div class="available-tasks" *ngIf="buttons.lp" (click)="doClick('lp')" id="button-0">
-            <div class="av-icon">
-              <img src="assets/icon/heart.png" alt="">
-            </div>
-            <div class="av-desc">
-              <h2>Me Gusta <small>Dar 40 Me Gusta</small></h2>
-            </div>
-            <div class="av-remn"><span>300 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
-          <div style="clear: both;"></div>
-          </div>
+        <ion-col size="12" *ngIf="loaded">
+
+          <div *ngFor="let pack of packages">
+            <!-- /**/ -->
+              <div *ngIf="pack.credit == 0 && (pack.id | packages:'buttonlp')" [ngClass]="buttons.lp ? 'available-tasks' : 'available-tasks-2'" (click)="doClick('lp',pack.quantity,pack.price,pack.id)" [id]="'button-'+pack.id">
+                <div class="av-icon">
+                  <img src="assets/icon/heart.png" alt="">
+                </div>
+                <div class="av-desc">
+                  <h2 *ngIf="buttons.lp">Me Gusta <small>Dar {{pack.quantity}} Me Gusta</small></h2>
+                  <h2 *ngIf="!buttons.lp">Me Gusta <small>Dar {{reslp}} Me Gusta</small></h2>
+                </div>
+                <div class="av-remn"><span>{{pack.price}} <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+              <div style="clear: both;"></div>
+              </div>
 
 
-          <div class="available-tasks" *ngIf="buttons.fp" (click)="doClick('fp')" id="button-1">
-            <div class="av-icon">
-              <img src="assets/icon/followers-.png" alt="">
-            </div>
-            <div class="av-desc">
-              <h2>VipFans <small>Seguir a 10 VipFans</small></h2>
-            </div>
-            <div class="av-remn"><span>350 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
-          <div style="clear: both;"></div>
-          </div>
+
+              <div *ngIf="pack.credit == 1 && (pack.id | packages:'buttonfp')" [ngClass]="buttons.fp ? 'available-tasks' : 'available-tasks-2'" (click)="doClick('fp',pack.quantity,pack.price,pack.id)" [id]="'button-'+pack.id">
+                <div class="av-icon">
+                  <img src="assets/icon/followers-.png" alt="">
+                </div>
+                <div class="av-desc">
+                  <h2 *ngIf="buttons.fp">VipFans <small>Seguir a {{pack.quantity}} VipFans</small></h2>
+                  <h2 *ngIf="!buttons.fp">VipFans <small>Seguir a {{resfp}} VipFans</small></h2>
+                </div>
+                <div class="av-remn"><span>{{pack.price}} <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+              <div style="clear: both;"></div>
+              </div>
 
 
-          <div class="available-tasks" *ngIf="buttons.cp" (click)="doClick('cp')" id="button-3">
-            <div class="av-icon">
-              <img src="assets/icon/conversation.png" alt="">
-            </div>
-            <div class="av-desc">
-              <h2>Comentarios <small>Hacer 50 Comentarios</small></h2>
-            </div>
-            <div class="av-remn"><span>500 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
-          <div style="clear: both;"></div>
-          </div>
 
-          <div class="available-tasks" *ngIf="buttons.vp" (click)="doClick('vp')" id="button-2">
-            <div class="av-icon">
-              <img src="assets/icon/0.png" alt="">
-            </div>
-            <div class="av-desc">
-              <h2>Reproducciones <small>Reproducir 20 vídeos</small></h2>
-            </div>
-            <div class="av-remn"><span>400 <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
-          <div style="clear: both;"></div>
+              <div *ngIf="pack.credit == 2 && (pack.id | packages:'buttoncp')" [ngClass]="buttons.cp ? 'available-tasks' : 'available-tasks-2'" (click)="doClick('cp',pack.quantity,pack.price,pack.id)" [id]="'button-'+pack.id">
+                <div class="av-icon">
+                  <img src="assets/icon/conversation.png" alt="">
+                </div>
+                <div class="av-desc">
+                  <h2 *ngIf="buttons.cp">Comentarios <small>Hacer {{pack.quantity}} Comentarios</small></h2>
+                  <h2 *ngIf="!buttons.cp">Comentarios <small>Hacer {{rescp}} Comentarios</small></h2>
+                </div>
+                <div class="av-remn"><span>{{pack.price}} <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+              <div style="clear: both;"></div>
+              </div>
+
+
+              <div *ngIf="pack.credit == 3 && (pack.id | packages:'buttonvp')" [ngClass]="buttons.vp ? 'available-tasks' : 'available-tasks-2'" (click)="doClick('vp',pack.quantity,pack.price,pack.id)" [id]="'button-'+pack.id">
+                <div class="av-icon">
+                  <img src="assets/icon/0.png" alt="">
+                </div>
+                <div class="av-desc">
+                  <h2 *ngIf="buttons.vp">Reproducciones <small>Reproducir {{pack.quantity}} vídeos</small></h2>
+                  <h2 *ngIf="!buttons.vp">Reproducciones <small>Reproducir {{resvp}} vídeos</small></h2>
+                </div>
+                <div class="av-remn"><span>{{pack.price}} <img src="assets/icon/iman-1.png" alt="" style="position: absolute; width: 25px;"></span></div>
+              <div style="clear: both;"></div>
+              </div>
+              <!-- /**/ -->
           </div>
 
         </ion-col>

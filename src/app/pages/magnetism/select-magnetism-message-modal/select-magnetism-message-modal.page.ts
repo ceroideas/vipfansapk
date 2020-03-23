@@ -20,15 +20,15 @@ export class SelectMagnetismMessageModalPage implements OnInit {
     let counts = this.navParams.get('counts');
 
     switch(this.icon) {
-      case 'like':
+      case 'likes':
         this._counts = counts[0];
         this.icon = 'likes';
         break;
-      case 'frends':
+      case 'followers':
         this._counts = counts[1];
         this.icon = 'persons';
         break;
-      case 'followers':
+      case 'comments':
         this._counts = counts[2];
         this.icon = 'comments';
         break;
@@ -68,13 +68,13 @@ export class SelectMagnetismMessageModalPage implements OnInit {
           });
 
           switch(this.icon) {
-            case 'like':
+            case 'likes':
               this.events.publish('resetLikes');
               break;
-            case 'frends':
+            case 'persons':
               this.events.publish('resetFollowers');
               break;
-            case 'followers':
+            case 'comments':
               this.events.publish('resetComments');
               break;
             case 'videos':
