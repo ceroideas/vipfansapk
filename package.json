@@ -34,7 +34,7 @@
     "@ionic/storage": "^2.2.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "cordova-android": "8.1.0",
     "cordova-plugin-customurlscheme": "^4.4.0",
     "cordova-plugin-device": "^2.0.3",
